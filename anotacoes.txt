@@ -68,9 +68,30 @@ Adicionado no package.json os scripts para poder rodar o nodemon
 "dev": "nodemon ./index.js"
 
 1. Criação das rotas
-2. Criação do usuário controller
+2. Criação do usuario.controller e as funcoes baseadas nas rotas
+    findUserByIdController,
+    findAllUsersController,
+    createUserController,
+    updateUserController,
+    deleteUserController,
+    addUserAddressController,
+    removeUserAddressController,
+    addUserFavProduct,
+    removeUserFavProduct,
 
+3. Editar as rotas no usuario.router.js com as funcoes criadas acima
 
+router.get('/findById:id', usuarioController.findUserByIdController);
+router.get('/findAll', usuarioController.findAllUsersController);
 
+router.post('/create', usuarioController.createUserController);
+router.post('/addAddress/:id', usuarioController.addUserAddressController);
+router.post('/addFavProduct/:id', usuarioController.addUserFavProduct);
 
+router.put('/update/:id', usuarioController.updateUserController);
 
+router.delete('/remove/:id', usuarioController.removeUserController);
+router.delete('/removoAddress/', usuarioController.removeUserAddressController);
+router.delete('/removeFavProduct', usuarioController.removeUserFavProduct);
+
+Aula 04 Documentação e User Service
