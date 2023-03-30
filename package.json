@@ -1,0 +1,20 @@
+{
+  "name": "italentsmarketplace",
+  "version": "1.0.0",
+  "description": "Curso de Backend ITalents - Módulo 2 - Atividade Final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

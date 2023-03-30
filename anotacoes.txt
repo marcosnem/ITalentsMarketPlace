@@ -1,0 +1,59 @@
+Aula 01 - Iniciando o Projeto
+
+1. Repositorio no Git
+
+1.1 Adicionar gitignore, license e readme. Deixar o projeto publico.
+1.2 Integrar pasta local com o git via VS Code
+
+2. Criar estrutura inicial
+
+2.1 Instalar via npm 
+express
+jsonwebtoken
+mongoose
+nodemon (com i -D)
+
+
+2.2 Pastas base
+src (pasta pai) dentro dela
+>>model
+>>controller
+>>service
+>>router
+>>database
+
+2.3 Arquivo index.js inicial
+
+const express = require("express");
+
+const app = express();
+
+const port = 3000;
+
+app.use(express.json());
+
+app.get("/", (req,res) => {
+
+    res.send({
+        message:"Bem vindo ao Marketplace"
+    });
+})
+
+app.listen(port, () => {
+    console.log(`Servidor rodando em: http://localhost:${port}`);
+})
+
+
+Aula 02 - Conexão e Model Usuário
+
+Itens a considerar
+1. Criacao do usuario
+2. Produto
+3. Pedido
+4. Categoria
+5. Carrinho
+
+OBS: Autenticação e Documentação são rotas
+
+
+
