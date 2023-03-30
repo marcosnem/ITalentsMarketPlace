@@ -150,7 +150,6 @@ const removeUserFavProduct = async (req,res) => {
 
 };
 
-
 module.exports = {
     findUserByIdController,
     findAllUsersController,
