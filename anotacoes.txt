@@ -95,3 +95,15 @@ router.delete('/removoAddress/', usuarioController.removeUserAddressController);
 router.delete('/removeFavProduct', usuarioController.removeUserFavProduct);
 
 Aula 04 Documentação e User Service
+
+Criado o usuario.service.js, suas const e as funcoes
+
+findUserByIdService,
+findAllUsersService,
+createUserService,
+updateUserService,
+removeUserService,
+addUserAddressService,
+removeUserAddressService,
+addUserFavProductService,
+removeUserFavProductService,
