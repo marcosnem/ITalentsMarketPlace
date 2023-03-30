@@ -55,5 +55,22 @@ Itens a considerar
 
 OBS: Autenticação e Documentação são rotas
 
+1. Criada a function connectToDatabase
+2. Criado o Schema do Usuario
+2.1 Atributo createAt serve para marcar a data que foi feita a task.
+2.2 Atributo produtos_fav é para definir obj com a id da collection produtos
+
+Aula 03 - Rotas Usuário
+
+Adicionado no package.json os scripts para poder rodar o nodemon
+
+"start":"node ./index.js",
+"dev": "nodemon ./index.js"
+
+1. Criação das rotas
+2. Criação do usuário controller
+
+
+
 
 
