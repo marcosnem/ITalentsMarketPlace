@@ -6,6 +6,7 @@ const findUserByIdService =  (id) => {
 }
 
 const findAllUsersService = () => {
+
     return Usuario.find();
 
 }

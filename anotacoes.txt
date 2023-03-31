@@ -107,3 +107,7 @@ addUserAddressService,
 removeUserAddressService,
 addUserFavProductService,
 removeUserFavProductService,
+
+Aula 05 - User controller
+
+

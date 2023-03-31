@@ -1,8 +1,8 @@
 const express = require("express");
-const usuarioController = require("../controller/usuario.controller")
- 
 //funcao para trabalhar com rotas
 const router = express.Router();
+const usuarioController = require("../controller/usuario.controller")
+ 
 
 // rotas get
 router.get('/findById:id', usuarioController.findUserByIdController);
