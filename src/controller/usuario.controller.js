@@ -16,7 +16,7 @@ try{
 }catch (err){
 
     if(err.kind == "ObjectId"){
-        console.log(err.kind == "ObjectId");
+       
         return res.status(400).send({message: `ID incorreto, tente novamente`});
     }
     

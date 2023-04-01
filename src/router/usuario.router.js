@@ -5,7 +5,7 @@ const usuarioController = require("../controller/usuario.controller")
  
 
 // rotas get
-router.get('/findById:id', usuarioController.findUserByIdController);
+router.get('/findById/:id', usuarioController.findUserByIdController);
 router.get('/findAll', usuarioController.findAllUsersController);
 
 // rotas post

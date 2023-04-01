@@ -110,4 +110,36 @@ removeUserFavProductService,
 
 Aula 05 - User controller
 
+padrao de cada funcao e resposta ao service do usuario no controller
+
+const findUserByIdController = async (req,res) => {
+try{
+    
+   const user = await userService.findUserByIdService(req.params.id);
+
+   if(!user) {
+    return res.status(404).send({message: "Usuário não encontrado"});
+   }
+
+   return res.status(200).send(user);
+
+}catch (err){
+
+    if(err.kind == "ObjectId"){
+        console.log(err.kind == "ObjectId");
+        return res.status(400).send({message: `ID incorreto, tente novamente`});
+    }
+    
+    console.log(`erro: ${err.message}`);
+
+    return res.status(500).send({message: `Erro inesperado, tente novamente!`});
+   
+}
+
+Aula 06 - Thunder Client
+
+Criada uma collection Market-Place, dentro dela a pasta User e os comandos no thunder para nao precisar digitar (findById e findAll, no caso)
+
+criada um env para gravar a BaseURL e Port. Na caixa de endereço do thnder é só usar {{BaseURL}}{{Port}}/usuario/funcao-rota, não precisa inserir a URL http://localhost:3000
+
 
