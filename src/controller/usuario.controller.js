@@ -95,14 +95,12 @@ const removeUserController = async (req,res) => {
 
         console.log(deletedUser);
 
-        return res.status(200).send({message: `Usuário deletado com sucesso`});
+        if(deletedUser == null){
+            return res.status(200).send({message: `Usuário não encontrado, tente novamente`});
 
-        // if(deletedUser.deletedCount > 0){
-        //     return res.status(200).send({message: `Usuário deletado com sucesso`});
-
-        // }else {
-        //     return res.status(404).send({message: `Usuário não encontrado, tente novamente`});
-        // }   
+        }else {
+            return res.status(404).send({message:  `Usuário deletado com sucesso` });
+        }   
 
     }catch (err){
         
