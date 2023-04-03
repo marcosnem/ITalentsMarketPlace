@@ -27,6 +27,26 @@ const removeUserService = (id) => {
 }
 
 const addUserAddressService = (id,endereco) => {
+// usar os indices do array para cada campo do endereco
+
+return Usuario.findOneAndUpdate(
+    {
+        _id: id
+    },
+    {
+        // push adicionar algo no objeto
+        $push: {
+            
+            enderecos: endereco
+        }
+    },
+    {
+//Passa o resultado cru / bruto
+    rawResult: true,
+
+    }
+)
+
 
 }
 
