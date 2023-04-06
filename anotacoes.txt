@@ -208,7 +208,17 @@ next();
 
 Aula 09 - Autenticação
 
+Update com senha criptografada
 
+UsuarioSchema.pre("findOneAndUpdate", async function(next) {
+    if(this._update.senha){
+    //processo de embaralhar senha 10 vezes
+    this._update.senha = await bcrypt.hash(this._update.senha, 10);
+    }
+    
+    next();
+    
+    });
 
 
 
