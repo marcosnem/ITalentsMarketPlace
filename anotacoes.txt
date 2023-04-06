@@ -190,6 +190,23 @@ return Usuario.findOneAndUpdate(
 
 Aula 08 - Criptografia com Bcrypt
 
+Instalacao do bcrypt
+
+npm i bcrypt
+
+//Usar os metodos pre do bcrypt no Schema do Usuario, antes de gerar o modelo
+
+UsuarioSchema.pre("save", async function(next) {
+if(this.senha){
+//processo de embaralhar senha 10 vezes
+this.senha = await bcrypt.hash(this.senha, 10);
+}
+
+next();
+
+});
+
+
 
 
 

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const UsuarioSchema = new mongoose.Schema({
     nome: { type: String, required: true },
@@ -27,6 +28,18 @@ const UsuarioSchema = new mongoose.Schema({
 // //Usuario é admin. Por padrao o ususário nao é admin. 
 //     admin: { type: Boolean, required: true, default: false},
 });
+
+//Usar os metodos pre do bcrypt no Schema do Usuario, antes de gerar o modelo
+
+UsuarioSchema.pre("save", async function(next) {
+    if(this.senha){
+    //processo de embaralhar senha 10 vezes
+    this.senha = await bcrypt.hash(this.senha, 10);
+    }
+    
+    next();
+    
+    });
 
 // Usuario recebe o modelo e grava o schema na collection usuarios
 const Usuario = mongoose.model("usuarios", UsuarioSchema);
