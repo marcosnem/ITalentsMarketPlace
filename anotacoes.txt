@@ -220,6 +220,8 @@ UsuarioSchema.pre("findOneAndUpdate", async function(next) {
     
     });
 
+Criada a rota login, o auth.controller e auth.service para gerar token e fazer o login do user
+
 
 
 
