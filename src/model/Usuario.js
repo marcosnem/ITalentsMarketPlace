@@ -41,6 +41,18 @@ UsuarioSchema.pre("save", async function(next) {
     
     });
 
+    //Atualiza a senha criptografando
+
+UsuarioSchema.pre("findOneAndUpdate", async function(next) {
+    if(this._update.senha){
+    //processo de embaralhar senha 10 vezes
+    this._update.senha = await bcrypt.hash(this._update.senha, 10);
+    }
+    
+    next();
+    
+    });
+
 // Usuario recebe o modelo e grava o schema na collection usuarios
 const Usuario = mongoose.model("usuarios", UsuarioSchema);
 
