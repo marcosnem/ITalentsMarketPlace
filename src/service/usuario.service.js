@@ -37,20 +37,41 @@ return Usuario.findOneAndUpdate(
         // push adicionar algo no objeto
         $push: {
             
-            enderecos: endereco
+            enderecos: endereco,
         }
     },
     {
-//Passa o resultado cru / bruto
+//Passa o resultado crud / bruto
     rawResult: true,
 
     }
-)
+);
 
 
 }
 
-const removeUserAddressService = (id) => {
+const removeUserAddressService = (id, addressId) => {
+    // usar os indices do array para cada campo do endereco
+
+return Usuario.findOneAndUpdate(
+    {
+        _id: id,
+    },
+    {
+        // pull para remover parte do objeto, se baseando no ID
+        $pull:{
+            
+            enderecos: {
+                _id: addressId,
+            }
+        }
+    },
+    {
+//Passa o resultado crud / bruto
+    rawResult: true,
+
+    }
+)
 
 }
 
