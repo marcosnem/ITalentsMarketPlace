@@ -143,3 +143,5 @@ Criada uma collection Market-Place, dentro dela a pasta User e os comandos no th
 criada um env para gravar a BaseURL e Port. Na caixa de endereço do thnder é só usar {{BaseURL}}{{Port}}/usuario/funcao-rota, não precisa inserir a URL http://localhost:3000
 
 
+
+

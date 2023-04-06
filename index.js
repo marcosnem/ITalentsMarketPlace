@@ -8,7 +8,7 @@ const port = 3000;
 
 app.use(express.json());
 
-connectTODatabase(); //conectando com o banco
+connectTODatabase(); //conectando com o banco teste
 
 // uso das rotas importadas na const usuario
 app.use("/usuario", usuario); //chamando as rotas
