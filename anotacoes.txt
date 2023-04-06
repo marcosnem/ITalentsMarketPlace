@@ -140,7 +140,55 @@ Aula 06 - Thunder Client
 
 Criada uma collection Market-Place, dentro dela a pasta User e os comandos no thunder para nao precisar digitar (findById e findAll, no caso)
 
-criada um env para gravar a BaseURL e Port. Na caixa de endereço do thnder é só usar {{BaseURL}}{{Port}}/usuario/funcao-rota, não precisa inserir a URL http://localhost:3000
+criada um env para gravar a BaseURL e Port. Na caixa de endereço do thnder é só usar {{BaseURL}}{{Port}}/rotapadrao(no caso, usuario)/funcao-rota, não precisa inserir a URL http://localhost:3000
+
+Aula 07
+
+Alteracao do adddUserAddressService
+
+// add endereco
+
+return Usuario.findOneAndUpdate(
+    {
+        _id: id
+    },
+    {
+        // push adicionar algo no objeto, sem remover
+        $push: {
+            
+            enderecos: endereco
+        }
+    },
+    {
+//Passa o resultado crud / bruto
+    rawResult: true,
+
+    }
+)
+
+remove endereco
+
+return Usuario.findOneAndUpdate(
+    {
+        _id: id,
+    },
+    {
+        // pull para remover parte do objeto, se baseando no ID
+        $pull:{
+            
+            enderecos: {
+                _id: addressId,
+            }
+        }
+    },
+    {
+//Passa o resultado crud / bruto
+    rawResult: true,
+
+    }
+)
+
+Aula 08 - Criptografia com Bcrypt
 
 
 
