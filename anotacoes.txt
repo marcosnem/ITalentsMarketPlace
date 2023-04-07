@@ -237,6 +237,8 @@ router.get('/findAll', authMiddleware, usuarioController.findAllUsersController)
 
 Aula 11 - DotEnv e Produto
 
+Parte 1
+
 DoEnv que vai usar a chave(secret) em execucao de memoria, não mais no codigo, em auth.service:
 
 const generateToken = (userId) => jwt.sign({id: userId}, "642ec99aa126e2d64d125f17", {expiresIn: 86400});
@@ -252,6 +254,18 @@ alterado database o caminho do bd por process.env.URLDATABASE
 Adicionado no index.js o require("dotenv").config(); para configurar a conexao antes de conectar
 
 substituido a senha nos arquivos auth.service e authmiddleware para process.env.SECRET
+
+Parte 2
+
+Criacao do estrutura do produtos
+
+model/Produto.js
+service/produto.js
+controller/produto.controller.js
+router/produto.router.js
+
+Model do produto
+
 
 
 
