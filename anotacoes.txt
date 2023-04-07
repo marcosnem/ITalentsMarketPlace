@@ -266,6 +266,8 @@ router/produto.router.js
 
 Model do produto
 
+Aula 12 CRUD produto
+
 
 
 

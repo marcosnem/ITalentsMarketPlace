@@ -5,7 +5,7 @@ const findProductByIdService =  (id) => {
     
 }
 
-const findAllProductService = () => {
+const findAllProductsService = () => {
 
     return Produto.find();
 
@@ -16,8 +16,8 @@ return Produto.create(body);
     
 }
 
-const updateProductService = (id,body) =>{
-    return Produto.findByIdAndUpdate(id,body, { returnDocument: "after" });
+const updateProductService = (id, body) =>{
+    return Produto.findByIdAndUpdate(id, body, { returnDocument: "after" });
 
 }
 
@@ -29,7 +29,7 @@ const deleteProductService = (id) => {
 module.exports = {
 
 findProductByIdService,
-findAllProductService,
+findAllProductsService,
 createProductService,
 updateProductService,
 deleteProductService,
