@@ -30,7 +30,7 @@ module.exports = async (req, res, next) => {
     }
 
     //verificar o token e a chave do authservice.js (secret)
-    jwt.verify(token, "642ec99aa126e2d64d125f17", async (err, decoded) => {
+    jwt.verify(token, process.env.SECRET, async (err, decoded) => {
 
     if(err){
         return res.status(500).send({message: "Token invalido, erro no sistema"});

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 function connectTODatabase() {
-  mongoose.connect("mongodb://127.0.0.1:27017/market-place",{
+  mongoose.connect(process.env.URLDATABASE,{
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }).then(() => {

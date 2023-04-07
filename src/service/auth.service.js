@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const loginService = (email) => Usuario.findOne({email: email}).select("senha");
 
 // service de assinatura do token com a chave e expirando em 24h
-const generateToken = (userId) => jwt.sign({id: userId}, "642ec99aa126e2d64d125f17", {expiresIn: 86400});
+const generateToken = (userId) => jwt.sign({id: userId}, process.env.SECRET, {expiresIn: 86400});
 
 module.exports = {
     loginService,
