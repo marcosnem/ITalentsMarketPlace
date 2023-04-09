@@ -30,9 +30,7 @@ const createProductController = async (req, res) => {
             // Confirma que o user do cadastro do produto é o que está logado
 
             ...req.body,
-            userId: req.userId,
-            createAt: new Date(),
-
+            userId: req.userId
         }
 
         res.send(await produtoService.createProductService(corpo));
@@ -68,9 +66,7 @@ const deleteProductController = async (req, res) => {
 
 const addCategoriaProdutoController = async (req, res) => {
     try{
-
-        req.body.createAt = new Date();
-        const categoria = await produtoService.addCategoriaProdutoService(req.params.id, req.body);
+       const categoria = await produtoService.addCategoriaProdutoService(req.params.id, req.body);
         
         res.status(200).send(categoria);
 

@@ -296,8 +296,15 @@ Aula 16 - CRUD do Carrinho
 
 model > service > controller > router > index.js
 
+Aula 17 - testando CRUD Carrinho
 
+Problemas para corrigir
 
+colocar a variavel err nos catchs do produto.controller
+
+Atributo categoria no modelo Produto.js alterado para categorias
+
+Usar o createAt no model usa:, default: Date.now()
 
 
 
