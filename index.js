@@ -8,6 +8,7 @@ const usuario = require("./src/router/usuario.router"); //arquivo da rota do usu
 const auth = require("./src/router/auth.router"); //arquivo da rota do usuario
 const produto = require("./src/router/produto.router"); //arquivo da rota do produto
 const categoria = require("./src/router/categoria.router");//arquivo da rota da categoria
+const carrinho = require("./src/router/carrinho.router");//arquivo da rota da carrinho
 
 const app = express();
 
@@ -17,11 +18,12 @@ app.use(express.json());
 
 connectTODatabase(); //conectando com o banco teste
 
-// uso das rotas importadas: usuario, login e produto
+// uso das rotas importadas: usuario, login, auth, produto, categoria e carrinho
 app.use("/usuario", usuario);
 app.use("/auth", auth);
 app.use("/produto", produto);
 app.use("/categoria", categoria);
+app.use("/carrinho", carrinho);
 
 app.get("/", (req,res) => {
 
