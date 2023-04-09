@@ -282,6 +282,18 @@ Descomentado o categoria dentro do model/Produto.js
 
 Em porduto.service foi criada a const addCategoriaProdutoService
 
+Aula 15 - Arrumar categorias no produto e testar
+
+Colocar os returns on addCategoriaProdutoController e removeCategoriaProdutoController
+res.status(200).send(categoria);
+
+Criar as rotas do add e remove categoria
+
+Para add categoria
+No thunder colocar a Id do produto na barra e o Id ca categoria no body da mensagem
+
+
+
 
 
 
