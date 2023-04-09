@@ -276,7 +276,13 @@ model > Service > controller >  ROUTER > INDEX.js
 
 Aula 14 - Test e deploy Categoria no produto
 
-Criar pasta no thunder
+Criar pasta no thunder com os comandos do CRUD
+
+Descomentado o categoria dentro do model/Produto.js
+
+Em porduto.service foi criada a const addCategoriaProdutoService
+
+
 
 
 
