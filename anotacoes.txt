@@ -274,6 +274,11 @@ Caminho para criacao
 
 model > Service > controller >  ROUTER > INDEX.js
 
+Aula 14 - Test e deploy Categoria no produto
+
+Criar pasta no thunder
+
+
 
 
 
