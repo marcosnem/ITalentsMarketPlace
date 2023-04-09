@@ -292,6 +292,11 @@ Criar as rotas do add e remove categoria
 Para add categoria
 No thunder colocar a Id do produto na barra e o Id ca categoria no body da mensagem
 
+Aula 16 - CRUD do Carrinho
+
+model > service > controller > router > index.js
+
+
 
 
 
