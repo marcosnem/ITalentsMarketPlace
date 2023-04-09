@@ -1,4 +1,4 @@
-const categoriaController = require("../service/categoria.service");
+const categoriaService = require("../service/categoria.service");
 
 const findCategoriaByIdController = async (req, res) => {
   try {
@@ -27,7 +27,7 @@ const createCategoriaController = async (req, res) => {
     
         const corpo = {
             ...req.body,
-            createdAt = new Date();
+            createAt: new Date(),
         }
 
         res.status(201).send(await categoriaService.createCategoriaService(corpo));
@@ -51,14 +51,14 @@ const updateCategoriaController = async (req, res) => {
 };
 
 const deleteCategoriaController = async (req, res) => {
-    try {
+  try {
 
-    return res.status(200).send(await categoriaService.deleteCategoriaController(req.params.id))
-    
-    } catch (err) {
-      console.log(`erro: ${err.message}`);
-      return res.status(500).send({ message: `Erro inesperado, tente novamente!` });
-    }
+    return res.status(200).send(await categoriaService.deleteCategoriaService(req.params.id));
+
+  } catch (err) {
+    console.log(`erro: ${err.message}`);
+    return res.status(500).send({ message: `Erro inesperado, tente novamente!` });
+  }
 };
 
 module.exports = {
