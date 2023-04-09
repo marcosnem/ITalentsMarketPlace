@@ -2,11 +2,12 @@ const express = require("express");
 require("dotenv").config();
 
 const connectTODatabase = require("./src/database/database"); //arquivo de conexao do banco
+
+// rotas importadas
 const usuario = require("./src/router/usuario.router"); //arquivo da rota do usuario
 const auth = require("./src/router/auth.router"); //arquivo da rota do usuario
-
 const produto = require("./src/router/produto.router"); //arquivo da rota do produto
-
+const categoria = require("./src/router/categoria.router");//arquivo da rota da categoria
 
 const app = express();
 
@@ -20,6 +21,7 @@ connectTODatabase(); //conectando com o banco teste
 app.use("/usuario", usuario);
 app.use("/auth", auth);
 app.use("/produto", produto);
+app.use("/categoria", categoria);
 
 app.get("/", (req,res) => {
 
