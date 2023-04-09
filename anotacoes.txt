@@ -270,6 +270,12 @@ Aula 12 CRUD produto
 
 Aula 13 Categoria
 
+Caminho para criacao 
+
+model > Service > controller >  ROUTER > INDEX.js
+
+
+
 
 
 
