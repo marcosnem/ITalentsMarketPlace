@@ -306,6 +306,11 @@ Atributo categoria no modelo Produto.js alterado para categorias
 
 Usar o createAt no model usa:, default: Date.now()
 
+Correcao no carrinho.controller linha 35, remover o req.params.id. 
+
+No model carrinho precisar ser required:true no id  dentro do array produtos e no userId
+ 
+
 
 
 
