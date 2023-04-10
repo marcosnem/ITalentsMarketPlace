@@ -1,6 +1,6 @@
 const Carrinho = require("../model/Carrinho");
 
-const findCarrinhoBybyIdService = (id) => {
+const findCarrinhoByIdService = (id) => {
     return Carrinho.findById(id);
 }
 
@@ -21,7 +21,7 @@ const deleteCarrinhoService = (id) => {
 }
 
 module.exports = {
-    findCarrinhoBybyIdService,
+    findCarrinhoByIdService,
     findAllCarrinhosService,
     createCarrinhoService,
     updateCarrinhoService,
