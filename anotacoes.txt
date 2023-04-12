@@ -316,7 +316,27 @@ Id do produto no body
 
 Na barra do thunder, apos o addFavProduct coloca a ID do usuario
 
-Aula 19 parei
+Aula 19 CRUD Pedido
+
+Fluxograma Market Place
+
+Usuario vai fazer uma conta
+
+Logar
+
+Token para validar o login
+
+Cadastrar produto com um categoria
+
+Add produto ao carrinho
+
+CRUD pedido igual ao carrinho
+
+1. Model Pedido
+2. 
+
+
+
 
 
 

@@ -1,0 +1,52 @@
+[
+  {
+    "_id": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "colName": "Market-Place",
+    "created": "2023-04-03T13:17:21.345Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "3abb3079-3111-4ae9-91b7-8cac2c763b48",
+        "name": "User",
+        "containerId": "",
+        "created": "2023-04-03T13:17:26.796Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "4d2e6348-ec93-4ce5-83ad-2868b0ec3c9c",
+        "name": "Auth",
+        "containerId": "",
+        "created": "2023-04-06T18:33:16.212Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "7715d840-8210-4023-908a-738be6fab731",
+        "name": "Produto",
+        "containerId": "",
+        "created": "2023-04-07T20:47:53.641Z",
+        "sortNum": 30000
+      },
+      {
+        "_id": "eb84ac26-d1ec-4de2-8cf7-c6e73883b45f",
+        "name": "Categoria",
+        "containerId": "",
+        "created": "2023-04-09T16:38:14.814Z",
+        "sortNum": 35000
+      },
+      {
+        "_id": "3f04ba95-ba14-4d16-930e-1d8c19cc47ae",
+        "name": "Carrinho",
+        "containerId": "",
+        "created": "2023-04-09T19:35:49.626Z",
+        "sortNum": 45000
+      },
+      {
+        "_id": "02306a26-d7d0-4d36-ac62-a0707b1bf1f9",
+        "name": "Pedido",
+        "containerId": "",
+        "created": "2023-04-12T14:26:22.788Z",
+        "sortNum": 55000
+      }
+    ]
+  }
+]

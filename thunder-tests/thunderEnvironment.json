@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "36b9e78a-5f79-4755-8401-888e710453f9",
+    "name": "market-place",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-04-03T13:16:16.868Z",
+    "modified": "2023-04-03T13:16:16.868Z",
+    "data": [
+      {
+        "name": "BaseURL",
+        "value": "http://localhost:"
+      },
+      {
+        "name": "Port",
+        "value": "3000"
+      },
+      {
+        "name": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmYxODEzYjJhZTZkMWUxNDE4ZDU5MSIsImlhdCI6MTY4MTIyNDg2NywiZXhwIjoxNjgxMzExMjY3fQ.XXHmC5EiD6tAACFfmePAijtz4uMUsXATfMNlIrgevGk"
+      }
+    ]
+  }
+]
