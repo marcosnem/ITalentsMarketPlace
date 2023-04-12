@@ -15,18 +15,19 @@ const UsuarioSchema = new mongoose.Schema({
             createdAt: { type: Date, required: true, default: Date.now() },
         }
     ],
+
+
+    produtos_fav: [
+        {
+            //define ID como um objeto do schema, sendo obrigatorio, unico e se refere a collection produtos
+            _id: { type: mongoose.Schema.Types.ObjectId, required: true, unique: true, ref: "produtos" }, 
+            createdAt: { type: Date, default: Date.now() },
+        }
+    ],
 //salva data de quandoo user foi criado 
-    createdAt: { type: Date, required: true, default: Date.now() },
-// 
-//     produtos_fav: [
-//         {
-//             //define ID como um objeto do schema, sendo obrigatorio, unico e se refere a collection produtos
-//             _id: { type: mongoose.Schema.Types.ObjectId, required: true, unique: true, ref: "produtos" }, 
-//             createdAt: { type: Date, required: true, default: Date.now() },
-//         }
-//     ],
-// //Usuario é admin. Por padrao o ususário nao é admin. 
-//     admin: { type: Boolean, required: true, default: false},
+createdAt: { type: Date, required: true, default: Date.now() },    
+//Usuario é admin. Por padrao o ususário nao é admin. 
+    admin: { type: Boolean, required: true, default: false},
 });
 
 //Usar os metodos pre do bcrypt no Schema do Usuario, antes de gerar o modelo
