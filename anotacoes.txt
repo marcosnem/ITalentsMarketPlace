@@ -316,6 +316,8 @@ Id do produto no body
 
 Na barra do thunder, apos o addFavProduct coloca a ID do usuario
 
+Aula 19 parei
+
 
 
 
