@@ -310,7 +310,11 @@ Correcao no carrinho.controller linha 35, remover o req.params.id.
 
 No model carrinho precisar ser required:true no id  dentro do array produtos e no userId
 
-Aula 18 parei
+Aula 18 - Add e rem produtos favoritos
+
+Id do produto no body
+
+Na barra do thunder, apos o addFavProduct coloca a ID do usuario
 
 
 
