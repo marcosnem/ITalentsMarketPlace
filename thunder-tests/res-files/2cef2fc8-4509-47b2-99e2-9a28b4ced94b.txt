@@ -1,0 +1,6 @@
+{
+  "nome": "Perfumaria",
+  "createAt": "2023-04-12T22:11:22.206Z",
+  "_id": "64372dc6a5e3e4c4fb63d41c",
+  "__v": 0
+}

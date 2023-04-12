@@ -1,0 +1,801 @@
+[
+  {
+    "_id": "25ae200b-6308-4897-b73c-dcbca482b205",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:10:32.830Z",
+    "modified": "2023-04-12T22:12:23.954Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "213"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"d5-yYwKJGZZjrPJA3hBB+ioRaCt7EI\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:12:23 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/auth/login",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "213 Bytes",
+      "responseTimeText": "94 ms",
+      "responseTime": 94,
+      "responseSize": 213
+    }
+  },
+  {
+    "_id": "a6afd669-0065-4fe4-8b01-db0ebe054e9b",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:13:17.932Z",
+    "modified": "2023-04-12T22:13:17.932Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "1449"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"5a9-mXXwWicK0c7+w+WDEpOSbiRcnOc\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:13:17 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/usuario/findAll",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "1.42 KB",
+      "responseTimeText": "25 ms",
+      "responseTime": 25,
+      "responseSize": 1449
+    }
+  },
+  {
+    "_id": "0f465a95-cf1b-4072-a0e3-307c6c35cdb5",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:13:48.332Z",
+    "modified": "2023-04-12T22:14:22.948Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "364"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"16c-l7e5L5Qjct1r1HBzXPa0o/tRg2c\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:14:22 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/usuario/findById/6435cbdbb7ac8d563257c599",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "364 Bytes",
+      "responseTimeText": "10 ms",
+      "responseTime": 10,
+      "responseSize": 364
+    }
+  },
+  {
+    "_id": "9f90d5d6-9199-42cd-868d-b11b06d18fd1",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:14:32.877Z",
+    "modified": "2023-04-12T22:14:32.877Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "190"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"be-tGeh6CkofFt9DQs5QHhEKb5GrsA\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:14:32 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/produto/findAll",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "190 Bytes",
+      "responseTimeText": "10 ms",
+      "responseTime": 10,
+      "responseSize": 190
+    }
+  },
+  {
+    "_id": "0dc30ed8-ae09-468b-8da3-59286e212b00",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:14:50.218Z",
+    "modified": "2023-04-12T22:16:41.656Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "512"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"200-7SO8c4HWZdg7skQT9ex/rxizav4\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:16:41 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/categoria/findAll",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "512 Bytes",
+      "responseTimeText": "7 ms",
+      "responseTime": 7,
+      "responseSize": 512
+    }
+  },
+  {
+    "_id": "a1509d5d-ffe7-4122-8a61-11511ef4397a",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:15:05.282Z",
+    "modified": "2023-04-12T22:15:05.282Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "100"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"64-jxeg5HLRvsr0ntA5nFRh9+WZjxk\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:15:05 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/categoria/find/6435d93a2559597d132e7654",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "100 Bytes",
+      "responseTimeText": "13 ms",
+      "responseTime": 13,
+      "responseSize": 100
+    }
+  },
+  {
+    "_id": "2cef2fc8-4509-47b2-99e2-9a28b4ced94b",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:15:29.505Z",
+    "modified": "2023-04-12T22:16:38.719Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "100"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"64-v19oVRoluUm5B/vQeDZK6XiAFU8\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:16:38 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/categoria/create",
+      "status": 201,
+      "statusText": "Created",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "100 Bytes",
+      "responseTimeText": "10 ms",
+      "responseTime": 10,
+      "responseSize": 100
+    }
+  },
+  {
+    "_id": "377a8adf-d2db-4260-9399-4d1da4c04024",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:16:05.662Z",
+    "modified": "2023-04-12T22:16:05.662Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "100"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"64-jxeg5HLRvsr0ntA5nFRh9+WZjxk\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:16:05 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/categoria/delete/6435d93a2559597d132e7654",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "100 Bytes",
+      "responseTimeText": "13 ms",
+      "responseTime": 13,
+      "responseSize": 100
+    }
+  },
+  {
+    "_id": "87b29ddb-5f42-44bd-8e14-cb4c6edee107",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:17:46.467Z",
+    "modified": "2023-04-12T22:22:13.113Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "269"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"10d-CWnQJE2c7nGMdeuH4VaE8U87apE\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:22:13 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/carrinho/findAll",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "269 Bytes",
+      "responseTimeText": "9 ms",
+      "responseTime": 9,
+      "responseSize": 269
+    }
+  },
+  {
+    "_id": "abca0a46-ebd2-4a46-8a38-9880eacf19ae",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:17:52.028Z",
+    "modified": "2023-04-12T22:18:15.028Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "268"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"10c-U3wcXJfaotqyJZJwUuCSdRgWzKU\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:18:15 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/carrinho/create",
+      "status": 201,
+      "statusText": "Created",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "268 Bytes",
+      "responseTimeText": "8 ms",
+      "responseTime": 8,
+      "responseSize": 268
+    }
+  },
+  {
+    "_id": "09f4f873-adb6-40c1-afaf-18ded1dc9374",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:21:26.901Z",
+    "modified": "2023-04-12T22:21:26.901Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "266"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"10a-LXwbCAC/Y04dUmxrPA2KPKRP688\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:21:26 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/carrinho/update/64372e27a5e3e4c4fb63d42a",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "266 Bytes",
+      "responseTimeText": "16 ms",
+      "responseTime": 16,
+      "responseSize": 266
+    }
+  },
+  {
+    "_id": "9d00dff0-2089-49f9-9f15-14a249223530",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:22:08.775Z",
+    "modified": "2023-04-12T22:22:08.775Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "266"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"10a-LXwbCAC/Y04dUmxrPA2KPKRP688\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:22:08 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/carrinho/delete/64372e27a5e3e4c4fb63d42a",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "266 Bytes",
+      "responseTimeText": "7 ms",
+      "responseTime": 7,
+      "responseSize": 266
+    }
+  },
+  {
+    "_id": "4623ab6d-08da-4c33-a1fb-626e56de324c",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:24:09.015Z",
+    "modified": "2023-04-12T22:40:29.334Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "564"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"234-shjvTnX8WCm1iAvoB+I/aDUlF2Y\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:40:29 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/pedido/findAll",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "564 Bytes",
+      "responseTimeText": "20 ms",
+      "responseTime": 20,
+      "responseSize": 564
+    }
+  },
+  {
+    "_id": "c6afede6-54bd-4ef2-a602-bf135202d58f",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:24:23.462Z",
+    "modified": "2023-04-12T22:27:20.110Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "279"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"117-dVD579zjNCsNC2W06K+YPhVSIQM\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:27:20 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/pedido/create",
+      "status": 201,
+      "statusText": "Created",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "279 Bytes",
+      "responseTimeText": "10 ms",
+      "responseTime": 10,
+      "responseSize": 279
+    }
+  },
+  {
+    "_id": "6103b95c-8ab0-4599-84f8-99f91944283a",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:27:45.242Z",
+    "modified": "2023-04-12T22:27:45.242Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "285"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"11d-5AAgMr2hXp+m0QglT7ryAwTFM6s\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:27:45 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/pedido/find/64372fafa5e3e4c4fb63d446",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "285 Bytes",
+      "responseTimeText": "8 ms",
+      "responseTime": 8,
+      "responseSize": 285
+    }
+  },
+  {
+    "_id": "afc9e111-1afd-4437-9704-046c1ff32045",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:28:01.146Z",
+    "modified": "2023-04-12T22:28:01.146Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "285"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"11d-5AAgMr2hXp+m0QglT7ryAwTFM6s\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:28:01 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/pedido/delete/64372fafa5e3e4c4fb63d446",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "285 Bytes",
+      "responseTimeText": "5 ms",
+      "responseTime": 5,
+      "responseSize": 285
+    }
+  },
+  {
+    "_id": "01429752-cded-44ef-8185-13d07e2dd9ca",
+    "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
+    "created": "2023-04-12T22:40:24.848Z",
+    "modified": "2023-04-12T22:40:24.848Z",
+    "response": {
+      "responseText": "",
+      "filePath": "",
+      "type": "json",
+      "headers": [
+        {
+          "name": "x-powered-by",
+          "value": "Express"
+        },
+        {
+          "name": "content-type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "name": "content-length",
+          "value": "283"
+        },
+        {
+          "name": "etag",
+          "value": "W/\"11b-fVOJ6W+MvBo5BoqOH84J+UuY7ZE\""
+        },
+        {
+          "name": "date",
+          "value": "Wed, 12 Apr 2023 22:40:24 GMT"
+        },
+        {
+          "name": "connection",
+          "value": "close"
+        }
+      ],
+      "cookies": [],
+      "testResults": [],
+      "url": "http://localhost:3000/pedido/updateStatus/6437301ca5e3e4c4fb63d44d",
+      "status": 200,
+      "statusText": "OK",
+      "contentType": "application/json; charset=utf-8",
+      "contentLength": "283 Bytes",
+      "responseTimeText": "31 ms",
+      "responseTime": 31,
+      "responseSize": 283
+    }
+  }
+]

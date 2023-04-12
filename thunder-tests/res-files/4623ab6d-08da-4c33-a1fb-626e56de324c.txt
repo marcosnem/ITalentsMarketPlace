@@ -1,0 +1,40 @@
+[
+  {
+    "_id": "6437301ca5e3e4c4fb63d44d",
+    "produtos": [
+      {
+        "_id": "64309dce9524c1fcd8b1d045",
+        "quantidade": 250
+      },
+      {
+        "_id": "64309de19524c1fcd8b1d04b",
+        "quantidade": 162
+      }
+    ],
+    "precoTotal": 750.8,
+    "frete": 50.6,
+    "userId": "6435cc3c2559597d132e75fa",
+    "concluido": true,
+    "createAt": "2023-04-12T22:26:36.355Z",
+    "__v": 0
+  },
+  {
+    "_id": "64373048a5e3e4c4fb63d454",
+    "produtos": [
+      {
+        "_id": "64309dce9524c1fcd8b1d045",
+        "quantidade": 12
+      },
+      {
+        "_id": "64309de19524c1fcd8b1d04b",
+        "quantidade": 26
+      }
+    ],
+    "precoTotal": 120.8,
+    "frete": 15,
+    "userId": "6435cc3c2559597d132e75fa",
+    "concluido": false,
+    "createAt": "2023-04-12T22:27:20.106Z",
+    "__v": 0
+  }
+]

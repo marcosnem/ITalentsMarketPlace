@@ -1,0 +1,18 @@
+{
+  "produtos": [
+    {
+      "_id": "64309dce9524c1fcd8b1d045",
+      "quantidade": 200
+    },
+    {
+      "_id": "64309de19524c1fcd8b1d04b",
+      "quantidade": 400
+    }
+  ],
+  "precoTotal": 4000.53,
+  "frete": 800.7,
+  "userId": "6435cc3c2559597d132e75fa",
+  "_id": "64372e27a5e3e4c4fb63d42a",
+  "createAt": "2023-04-12T22:18:15.018Z",
+  "__v": 0
+}

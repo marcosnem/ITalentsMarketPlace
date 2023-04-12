@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "6435d9252559597d132e764c",
+    "nome": "Eletronicos",
+    "createAt": "2023-04-11T21:04:38.077Z",
+    "__v": 0
+  },
+  {
+    "_id": "6435d92e2559597d132e7650",
+    "nome": "Video games",
+    "createAt": "2023-04-11T21:04:38.077Z",
+    "__v": 0
+  },
+  {
+    "_id": "6435d9432559597d132e7658",
+    "nome": "Higiene Pessoal",
+    "createAt": "2023-04-11T21:04:38.077Z",
+    "__v": 0
+  },
+  {
+    "_id": "64372d81a5e3e4c4fb63d40f",
+    "nome": "Militares",
+    "createAt": "2023-04-12T22:11:22.206Z",
+    "__v": 0
+  },
+  {
+    "_id": "64372dc6a5e3e4c4fb63d41c",
+    "nome": "Perfumaria",
+    "createAt": "2023-04-12T22:11:22.206Z",
+    "__v": 0
+  }
+]

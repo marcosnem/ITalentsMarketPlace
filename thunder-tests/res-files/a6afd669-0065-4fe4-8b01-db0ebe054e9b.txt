@@ -1,0 +1,74 @@
+[
+  {
+    "admin": false,
+    "_id": "642b2e48bced05c25155f18a",
+    "nome": "PaulinoNovo 1",
+    "email": "paulinoNovo1@mail.com",
+    "senha": "$2b$10$XIXguY7KxBUBI6aQkt6MbOfI6w.Rj77Ptij6NwfHkxGrwGr0ONcY2",
+    "imagem": "img.paulinonovo1.com/paulinonovo1.jpg",
+    "createdAt": "2023-04-03T19:50:20.614Z",
+    "enderecos": [],
+    "__v": 0,
+    "produtos_fav": []
+  },
+  {
+    "admin": false,
+    "_id": "642b40e3bced05c25155f18d",
+    "nome": "Paulino2 ",
+    "email": "paulino2@mail.com",
+    "senha": "123456",
+    "imagem": "img.paulino2.com/paulino2.jpg",
+    "createdAt": "2023-04-03T19:50:20.614Z",
+    "enderecos": [
+      {
+        "rua": "Rua Teste 2 ",
+        "numero": "12",
+        "CEP": "59600000",
+        "createdAt": "2023-04-11T21:04:38.019Z",
+        "_id": "6435cfbe2559597d132e7608"
+      }
+    ],
+    "__v": 0,
+    "produtos_fav": []
+  },
+  {
+    "admin": false,
+    "_id": "6435cbdbb7ac8d563257c599",
+    "nome": "PaulinoTeste ",
+    "email": "paulino100@mail.com",
+    "senha": "123456",
+    "imagem": "img.paulino1.com/paulino1.jpg",
+    "createdAt": "2023-04-03T19:50:20.614Z",
+    "enderecos": [
+      {
+        "rua": "Rua Teste 3 ",
+        "numero": "12",
+        "CEP": "59600000",
+        "createdAt": "2023-04-11T21:04:38.019Z",
+        "_id": "6435d0322559597d132e760a"
+      }
+    ],
+    "__v": 0,
+    "produtos_fav": []
+  },
+  {
+    "_id": "6435cc3c2559597d132e75fa",
+    "nome": "Paulino200 ",
+    "email": "paulino200@mail.com",
+    "senha": "$2b$10$odwML6vNzdvXfvWtA2/X6.vxyp/9AiV7UjjkyqZxOwsRSMRYyhCyq",
+    "imagem": "img.paulino2.com/paulino2.jpg",
+    "createdAt": "2023-04-11T21:04:38.019Z",
+    "admin": false,
+    "enderecos": [
+      {
+        "rua": "Rua de verdade",
+        "numero": "120",
+        "CEP": "59600000",
+        "createdAt": "2023-04-11T21:04:38.019Z",
+        "_id": "6435d05b2559597d132e7611"
+      }
+    ],
+    "produtos_fav": [],
+    "__v": 0
+  }
+]

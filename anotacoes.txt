@@ -331,23 +331,3 @@ Cadastrar produto com um categoria
 Add produto ao carrinho
 
 CRUD pedido igual ao carrinho
-
-1. Model Pedido
-2. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

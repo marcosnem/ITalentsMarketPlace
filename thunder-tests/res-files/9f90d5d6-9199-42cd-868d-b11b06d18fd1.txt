@@ -1,0 +1,12 @@
+[
+  {
+    "_id": "6435d8622559597d132e763c",
+    "nome": "Produto 1",
+    "descricao": "Este é o produto 1",
+    "precoUnitario": 123,
+    "imagem": "produto1.img.br/produto1",
+    "codigoBarra": 123456,
+    "categorias": [],
+    "__v": 0
+  }
+]
