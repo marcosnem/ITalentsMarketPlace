@@ -338,10 +338,18 @@ Melhorar a validacao do usuario
 1. Cria o validacao.middleware.js no folder middleware. Para testar o campos do objeto usuario
 2. Na router do usuario, importar a validacao.middleware via desconstruca e adiciona-lo nas rotas create e update.
 
-Aula 21
+Aula 21 - valida usuario, produto e categoria
 
 construcao do validaProduto
 
 construcao do validaCategoria
+
+Aula 22 - valida pedido e carrinho
+
+construcao do validaPedido
+
+
+
+
 
 
