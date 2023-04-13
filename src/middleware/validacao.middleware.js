@@ -74,8 +74,67 @@ const validaCategoria = (req, res, next) => {
 
 }
 
+const validaPedido = (req, res, next) => {
+  let erros = [];  //var para acumular erros
+
+  if(!req.body.precoTotal){
+    erros.push("precoTotal");
+  }
+
+  if(!req.body.frete){
+    erros.push("frete");
+  }
+  if(!req.body.concluido){
+    erros.push("concluido");
+  }
+  
+ //se nao tiver erros, passe para o next
+ if(erros.length == 0){
+  return next();
+
+} else {
+//se for um erro
+  if(erros.length > 1){
+    return res.status(400).send({ message: `Os campos ${erros} precisam ser preenchidos!`  });
+  }else {
+    //se for mais de um
+    return res.status(400).send({ message: `O campo ${erros} precisa ser preenchido!`  });
+  }
+}
+
+}
+
+const validaCarrinho = (req, res, next) => {
+  let erros = [];  //var para acumular erros
+
+  if(!req.body.precoTotal){
+    erros.push("precoTotal");
+  }
+
+  if(!req.body.frete){
+    erros.push("frete");
+  }
+   
+ //se nao tiver erros, passe para o next
+ if(erros.length == 0){
+  return next();
+
+} else {
+//se for um erro
+  if(erros.length > 1){
+    return res.status(400).send({ message: `Os campos ${erros} precisam ser preenchidos!`  });
+  }else {
+    //se for mais de um
+    return res.status(400).send({ message: `O campo ${erros} precisa ser preenchido!`  });
+  }
+}
+
+}
+
 module.exports = {
     validaUsuario,
     validaProduto,
-    validaCategoria
+    validaCategoria,
+    validaPedido,
+    validaCarrinho
 }
