@@ -33,7 +33,7 @@ const addCategoriaProdutoService = (id, categoria) => {
         },
         {
             $push: {
-                categoria: {
+                categorias: {
                     _id: categoria._id,
                     createAt: categoria.createAt
                 },
@@ -52,7 +52,7 @@ const removeCategoriaProdutoService = (id, categoria) => {
         },
         {
             $pull: {
-                categoria: {
+                categorias: {
                     _id: categoria._id,
                 },
             },

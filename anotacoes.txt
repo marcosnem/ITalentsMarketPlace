@@ -386,7 +386,30 @@ const findAllProductsService = (limit, offset) => {
 
 }
 
-Aula 25 parei
+Aula 25 - Valida campos do endereço
+
+criacao do validaEndereco
+
+criacao validaFavProduto
+
+alteracao do validaId para validaIdParams
+
+Criacao do valida_IdBody
+
+Foi substituido o validaId por validaIdParams em todas as rotas
+
+Alteracao no produto.controller 
+
+De: const categoria = await produtoService.removeCategoriaProdutoService(req.params.id, req.body);
+    res.status(200).send(categoria);
+
+para: res.status(200).send(await produtoService.removeCategoriaProdutoService(req.params.id, req.body)); 
+
+
+
+
+
+
 
 
 
