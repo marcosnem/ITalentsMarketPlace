@@ -5,9 +5,9 @@ const findUserByIdService =  (id) => {
     
 }
 
-const findAllUsersService = () => {
+const findAllUsersService = (limit, offset) => {
 
-    return Usuario.find();
+    return Usuario.find().limit(limit).skip(offset);
 
 }
 

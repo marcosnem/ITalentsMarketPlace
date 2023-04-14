@@ -5,9 +5,9 @@ const findProductByIdService =  (id) => {
     
 }
 
-const findAllProductsService = () => {
+const findAllProductsService = (limit, offset) => {
 
-    return Produto.find();
+    return Produto.find().limit(limit).skip(offset);
 
 }
 
