@@ -416,7 +416,28 @@ correcoes
 1. linha 20 no validacao.middleware 
  if (!req.body.admin == undefined)
 
-2. 
+Instalacao do Swagger
+
+Criar na raiz do projeto o arquivo swagger.json
+
+Instalar dependencias
+
+1. npm i swagger-ui-express
+
+Criar o docs.router.js dentro de router
+Definir a rota 
+
+testar no navegador 
+
+http://localhost:3000/docs/api-docs/
+
+Aula 27 Swagger configs
+
+definindo os paths no swagger.json
+
+
+
+
 
 
 

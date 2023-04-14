@@ -1,0 +1,55 @@
+{
+    "openapi":"3.0.0",
+    "info":{
+        "title":"API Market Place",
+        "description":"API de Market Place completa contendo CRUD de diversos assuntos",
+        "contact":{
+            "name":"Marcos",
+            "email":"marcos@mail.com"
+        },
+        "version":"1.0.0"
+    },
+    "servers": [
+        {
+            "url":"http://localhost:3000/",
+            "description":"API teste local. Ambiente Homologacao"
+        },
+        {
+            "url":"https://www.google.com/",
+            "description":"API teste externo. Ambiente Producao"   
+        }
+    ],
+    "paths":{
+        "/usuario/findAll": {
+            "get": {
+                "summary":"Lista todos os usuario da API",
+                "description":"Rota responsável por listar todos os usuários da API",
+                "tags":["Usuários"],
+                "responses": {
+                    "200":{
+                        "description":"OK, tarefa realizada com sucesso!"
+                    },
+                    "401":{
+                        "description":"Unauthorized, Erro de autenticação, problema com o token"
+                    },
+                    "404":{
+                        "description":"Not found, nenhum usuário encontrado"
+                    },
+                    "500":{
+                        "description":"Internal Server Error, erro com o servidor"
+                    }
+                             
+            }
+        }
+    },
+
+        "usuario/find":{
+            "get": {
+                "summary":"Lista um usuario correspondente a ID informada da API",
+                "description":"Rota responsável por localizar um usuário da API através do ID informada",
+                "tags":["Usuários"]
+            }
+        }
+    }
+
+    }

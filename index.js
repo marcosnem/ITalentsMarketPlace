@@ -10,8 +10,7 @@ const produto = require("./src/router/produto.router"); //arquivo da rota do pro
 const categoria = require("./src/router/categoria.router");//arquivo da rota da categoria
 const carrinho = require("./src/router/carrinho.router");//arquivo da rota da carrinho
 const pedido = require("./src/router/pedido.router");//arquivo da rota da pedido
-
-
+const docs = require("./src/router/docs.router");//arquivo da rota da documentacao
 
 const app = express();
 
@@ -28,6 +27,7 @@ app.use("/produto", produto);
 app.use("/categoria", categoria);
 app.use("/carrinho", carrinho);
 app.use("/pedido", pedido);
+app.use("/docs", docs)
 
 
 app.get("/", (req,res) => {
