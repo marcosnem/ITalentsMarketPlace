@@ -405,8 +405,18 @@ De: const categoria = await produtoService.removeCategoriaProdutoService(req.par
 
 para: res.status(200).send(await produtoService.removeCategoriaProdutoService(req.params.id, req.body)); 
 
+criacao do validaProdutosCarrinhoPedido
 
+altercao das rotas create no pedido e carrinho
 
+Aula 26 - Swagger Document
+
+correcoes 
+
+1. linha 20 no validacao.middleware 
+ if (!req.body.admin == undefined)
+
+2. 
 
 
 
