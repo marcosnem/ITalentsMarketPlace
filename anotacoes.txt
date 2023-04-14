@@ -356,6 +356,8 @@ Aula 23 - Validacao ID e login
 
  construcao validaId
 
+construcao validaLogin - importada na auth.router.js
+
 
 
 
