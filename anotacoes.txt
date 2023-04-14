@@ -358,6 +358,36 @@ Aula 23 - Validacao ID e login
 
 construcao validaLogin - importada na auth.router.js
 
+Aula 24 - paginacao e addCategoriaProdutoController
+
+Paginacao limita a quantidade de transferencia
+
+Criacao do paginacao.middleware.js que vai ser uma funcao
+
+Como usar o limit
+
+No thunder, dentro da URl, da forma abaixo:
+
+{{BaseURL}}{{Port}}/produto/findAll/?limit+10&offset=0
+
+A aba query vai estar preenchida com limite 10
+
+Depois, só digitar offset 0, para iniciar do primeiro campo do banco
+
+Ir nas router de findAll e importar paginacao.middleware, config a const paginacao antes do authMiddleware
+
+configurar no controller, na funcao findAll colocar (req.query.limit, req.query.offset)
+
+configurar no service, na funcao findAll, como abaixo
+
+const findAllProductsService = (limit, offset) => {
+
+    return Produto.find().limit(limit).skip(offset);
+
+}
+
+
+
 
 
 
