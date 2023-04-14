@@ -348,6 +348,14 @@ Aula 22 - valida pedido e carrinho
 
 construcao do validaPedido
 
+resumo
+
+Validacoes para create e update. Para que o usuario precise digitar todas as informações
+
+Aula 23 - Validacao ID e login
+
+ construcao validaId
+
 
 
 
