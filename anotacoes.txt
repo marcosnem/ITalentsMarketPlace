@@ -445,7 +445,7 @@ criado as respostas dos codigos (200,401,404 e 500)
 
 Aula 29 - parametros da endpoints
 
-Aula 30 parei
+Aula 30 
 
 
 
