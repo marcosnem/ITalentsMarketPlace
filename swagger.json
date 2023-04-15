@@ -1,55 +1,352 @@
 {
-    "openapi":"3.0.0",
-    "info":{
-        "title":"API Market Place",
-        "description":"API de Market Place completa contendo CRUD de diversos assuntos",
-        "contact":{
-            "name":"Marcos",
-            "email":"marcos@mail.com"
-        },
-        "version":"1.0.0"
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Market Place",
+    "description": "API de Market Place completa contendo CRUD de diversos assuntos",
+    "contact": {
+      "name": "Marcos",
+      "email": "marcos@mail.com"
     },
-    "servers": [
-        {
-            "url":"http://localhost:3000/",
-            "description":"API teste local. Ambiente Homologacao"
-        },
-        {
-            "url":"https://www.google.com/",
-            "description":"API teste externo. Ambiente Producao"   
-        }
-    ],
-    "paths":{
-        "/usuario/findAll": {
-            "get": {
-                "summary":"Lista todos os usuario da API",
-                "description":"Rota responsável por listar todos os usuários da API",
-                "tags":["Usuários"],
-                "responses": {
-                    "200":{
-                        "description":"OK, tarefa realizada com sucesso!"
-                    },
-                    "401":{
-                        "description":"Unauthorized, Erro de autenticação, problema com o token"
-                    },
-                    "404":{
-                        "description":"Not found, nenhum usuário encontrado"
-                    },
-                    "500":{
-                        "description":"Internal Server Error, erro com o servidor"
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/",
+      "description": "API teste local. Ambiente Homologacao"
+    },
+    {
+      "url": "https://www.google.com/",
+      "description": "API teste externo. Ambiente Producao"
+    }
+  ],
+  "paths": {
+    "/usuario/findAll": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+
+        "summary": "Lista todos os usuario da API",
+        "description": "Rota responsável por listar todos os usuários da API",
+        "tags": ["Usuários"],
+        "parameters": [
+          {
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "name": "limit"
+          },
+          {
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "name": "offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK, tarefa realizada com sucesso!",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
                     }
-                             
+                  }
+                }
+              }
             }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
+      }
     },
 
-        "usuario/find":{
-            "get": {
-                "summary":"Lista um usuario correspondente a ID informada da API",
-                "description":"Rota responsável por localizar um usuário da API através do ID informada",
-                "tags":["Usuários"]
-            }
-        }
-    }
+    "/usuario/find/{id}": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
 
+        "summary": "Lista um usuario correspondente a ID informada da API",
+        "description": "Rota responsável por localizar um usuário da API através do ID informada",
+        "tags": ["Usuários"],
+        "parameters": [
+          {
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um user encontro pelo ID informado",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario/create": {
+      "post": {
+        "security": [
+            {
+              "bearerAuth": []
+            }
+          ],
+        "summary": "Criar um user novo",
+        "description": "Rota responsável por criar um novo usuário a partir das informações passadas no endpoint",
+        "tags": ["Usuários"],
+        "parameters": [
+            {
+                "in":"body",
+                "required": true,
+                "schema": {
+                    "$ref": "#/components/schemas/Usuario"
+                },
+                "name":"body"
+            }
+            
+        ],
+        "responses": {
+            "201": {
+                "description": "Retorna o objeto criado no banco",
+                "content": {
+                    "aplication/json": {
+                      "schema": {
+                        "type": "object",
+                        "$ref": "#/components/schemas/Usuario"
+                      }
+                    }
+                  }
+            },
+            "500": {
+                "description": "Internal Server Error, erro com o servidor",
+                "content": {
+                  "aplication/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "message": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+        }
+      }
+    },
+    "/usuario/update/{id}": {
+        "put": {
+            "security": [
+                {
+                  "bearerAuth": []
+                }
+              ],
+            "summary": "Lista um usuario correspondente a ID informada da API",
+            "description": "Rota responsável por localizar um usuário da API através do ID informada",
+            "tags": ["Usuários"],
+            "responses": {
+                "200": {
+                    "description": "aaaa"
+                }
+            }
+          }
+    },
+
+    "/usuario/delete/{id}": {
+        "delete": {
+            "security": [
+                {
+                  "bearerAuth": []
+                }
+              ],
+            "summary": "Lista um usuario correspondente a ID informada da API",
+            "description": "Rota responsável por localizar um usuário da API através do ID informada",
+            "tags": ["Usuários"],
+            "responses": {
+                "200": {
+                    "description": "aaaa"
+                }
+            }
+          }
     }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+
+    "schemas": {
+      "Usuario": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "senha": {
+            "type": "string"
+          },
+          "imagem": {
+            "type": "string"
+          },
+          "enderecos": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "rua": {
+                  "type": "string"
+                },
+                "numero": {
+                  "type": "number"
+                },
+                "complemento": {
+                  "type": "string"
+                },
+                "CEP": {
+                  "type": "string"
+                },
+                "createAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "produtos_fav": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "_id": {
+                  "type": "string"
+                },
+                "createAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "createAt": {
+            "type": "string"
+          },
+          "admin": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

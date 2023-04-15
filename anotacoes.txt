@@ -433,10 +433,19 @@ http://localhost:3000/docs/api-docs/
 
 Aula 27 Swagger configs
 
-definindo os paths no swagger.json
+definindo a rota findAll find do usuario (paths) no swagger.json
 
+Aula 28 - Authorization e Schema de usuario
 
+Inserindo os Schemas no components do swagger
 
+usando o bearer para aplicar segurança no acesso as dados do banco
+
+criado as respostas dos codigos (200,401,404 e 500)
+
+Aula 29 - parametros da endpoints
+
+Aula 30 parei
 
 
 
