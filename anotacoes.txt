@@ -459,6 +459,18 @@ ID Usuario para teste 642f03d5945c300041c7ea3f
 token
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmYxODEzYjJhZTZkMWUxNDE4ZDU5MSIsImlhdCI6MTY4MTYwODY0NCwiZXhwIjoxNjgxNjk1MDQ0fQ.-Mbd_ms_4LWZjP5a9lBTx5kJ0nb31edPHa41YYrtYJY
 
+Aula 32 - Implement do CORS (Cross Origin Resource Sharing)
+
+npm i cors 
+
+importar no index
+
+ativar o uso app.use(cors());
+
+
+
+
+
 
 
 
