@@ -46,7 +46,7 @@ const findAllUsersController = async (req, res) => {
 const createUserController = async (req, res) => {
     try{
 
-      res.status(201).send(await userService.createUserService(body));
+      res.status(201).send(await userService.createUserService(req.body));
 
     //fazer os if com o restante dos campos do usuario    
 
