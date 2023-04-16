@@ -467,6 +467,11 @@ importar no index
 
 ativar o uso app.use(cors());
 
+Aula 33 - arquivo README
+
+Site do https://www.markdownguide.org/
+Pra documentacao
+
 
 
 
