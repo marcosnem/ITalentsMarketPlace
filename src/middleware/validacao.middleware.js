@@ -5,9 +5,9 @@ const validaUsuario = (req, res, next) => {
     return res.status(400).send({ message: `O campo 'nome' precisa ser preenchido` });
   }
   // confirmar o type de objeto
-  if (req.body.nome){
-    console.log(typeof(req.body.nome));
-  }  
+  // if (req.body.nome){
+  //   console.log(typeof(req.body.nome));
+  // }  
   if (!req.body.email) {
     return res.status(400).send({ message: `O campo 'email' precisa ser preenchido` });
   }
