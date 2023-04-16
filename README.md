@@ -2,6 +2,10 @@
 
 Curso de Backend ITalents - Módulo 2 - Atividade Final
 
+Código desenvolvido em Javascript
+
+![Node.js](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png "Node.js")
+
 ## Instalação
 
 1. Baixe todo o codigo
@@ -25,6 +29,8 @@ Todas os endpoints da nossa aplicação serão  listados abaixo:
 | 401    | Retorna o erro de autenticação                 |
 | 500    | Retorna informando que não encontrou o usuário |
 
+Trecho de código de controller findById:
+
 ```javascript
 const findUserByIdController = async (req,res) => {
 try{
@@ -40,7 +46,7 @@ try{
 }catch (err){
 
     if(err.kind == "ObjectId"){
-     
+   
         return res.status(400).send({message: `ID incorreto, tente novamente`});
     }
   
