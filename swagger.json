@@ -51,7 +51,7 @@
           "200": {
             "description": "OK, tarefa realizada com sucesso!",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -65,7 +65,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -80,7 +80,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -95,7 +95,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -136,7 +136,7 @@
           "200": {
             "description": "Retorna um user encontro pelo ID informado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -147,7 +147,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -162,7 +162,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -177,7 +177,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -200,7 +200,7 @@
         "requestBody": 
         {
           "content": {
-            "aplication/json": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "$ref": "#/components/schemas/Usuario"
@@ -213,7 +213,7 @@
           "201": {
             "description": "Retorna o objeto criado no banco",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -224,7 +224,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -261,7 +261,7 @@
         ],
         "requestBody": {
           "content": {
-            "aplication/json": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "$ref": "#/components/schemas/Usuario"
@@ -274,7 +274,7 @@
           "200": {
             "description": "Retorna o objeto atualizado no banco",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -285,7 +285,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -300,7 +300,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -315,7 +315,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -355,7 +355,7 @@
           "200": {
             "description": "Retorna o objeto deletado no banco",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -366,7 +366,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -381,7 +381,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -396,7 +396,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -433,7 +433,7 @@
         ],
         "requestBody": {
           "content": {
-            "aplication/json": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "$ref": "#/components/schemas/UserAddress"
@@ -447,7 +447,7 @@
           "201": {
             "description": "Retorna um usuario com seu novo endereço",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -458,7 +458,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -473,7 +473,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -488,7 +488,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -503,7 +503,7 @@
         }
       }
     },
-    "/usuario/removeAddress/{id}": {
+    "/usuario/removeAddress/": {
       "delete": {
         "security": [
           {
@@ -513,21 +513,29 @@
         "summary": "Remove endereço do usuário",
         "description": "Rota responsável por remover endereços do usuário informado",
         "tags": ["Usuario"],
-        "parameters": [
-          {
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "name": "id"
-          }
-        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "addressId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Retorna um usuário com seu endereço removido",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -538,7 +546,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -553,7 +561,7 @@
           "404": {
             "description": "Not found, nenhum endereço encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -568,7 +576,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -605,7 +613,7 @@
         ],
         "requestBody": {
           "content": {
-            "aplication/json": {
+            "application/json": {
               "schema": {
                 "type": "object",
                 "$ref": "#/components/schemas/ProductFav"
@@ -618,7 +626,7 @@
           "201": {
             "description": "Retorna um usuário com seu novo favorito",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -629,7 +637,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -644,7 +652,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -659,7 +667,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -694,11 +702,26 @@
             "name": "id"
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string"
+                  }                 
+                }
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Retorna um usuário com seu produto favorito removido",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -709,7 +732,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -724,7 +747,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -739,7 +762,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
