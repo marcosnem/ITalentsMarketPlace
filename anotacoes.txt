@@ -447,7 +447,19 @@ Aula 29 - parametros da endpoints
 
 Aula 30 Docs CRUD e user completo
 
-Aula 31 - OpenAPI 3.0 e Fix CRUD usuário parei
+Aula 31 - OpenAPI 3.0 e Fix CRUD usuário
+
+alteracao no swagger.json
+linha 114 e 127
+
+rota para findById e de query para paths
+
+ID Usuario para teste 642f03d5945c300041c7ea3f
+
+token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmYxODEzYjJhZTZkMWUxNDE4ZDU5MSIsImlhdCI6MTY4MTYwODY0NCwiZXhwIjoxNjgxNjk1MDQ0fQ.-Mbd_ms_4LWZjP5a9lBTx5kJ0nb31edPHa41YYrtYJY
+
+
 
 
 
