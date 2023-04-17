@@ -5,9 +5,9 @@ const validaUsuario = (req, res, next) => {
     return res.status(400).send({ message: `O campo 'nome' precisa ser preenchido` });
   }
   // confirmar o type de objeto
-  if (req.body.nome){
-    console.log(typeof(req.body.nome));
-  }  
+  // if (req.body.nome){
+  //   console.log(typeof(req.body.nome));
+  // }  
   if (!req.body.email) {
     return res.status(400).send({ message: `O campo 'email' precisa ser preenchido` });
   }
@@ -20,7 +20,6 @@ const validaUsuario = (req, res, next) => {
   if (!req.body.admin == undefined) {
     return res.status(400).send({ message: `O campo 'admin' precisa ser preenchido` });
   }
-
   return next();
 }
 
@@ -49,18 +48,29 @@ const validaCliente = (req, res, next) => {
 const validaEndereco = (req, res, next) => {
   let erros = [];
 
-  req.body.map((value, key) => {
+  // req.body.map((value, key) => {
 
-    if(!value.rua){
-      erros.push(`'${key+1} - rua'`)
-    }
-    if(!value.numero){
-      erros.push(`'${key+1} - numero'`)
-    }
-    if(!value.CEP){
-      erros.push(`'${key+1} - CEP'`)
-    }
-  });
+  //   if (!value.rua) {
+  //     erros.push(`'${key + 1} - rua'`);
+  //   }
+  //   if (!value.numero) {
+  //     erros.push(`'${key + 1} - numero'`);
+  //   }
+  //   if (!value.CEP) {
+  //     erros.push(`'${key + 1} - CEP'`);
+  //   }
+  //  });
+  if(!req.body.rua){
+    erros.push("rua");
+  }
+
+  if(!req.body.numero){
+    erros.push("numero");
+  }
+
+  if(!req.body.CEP){
+    erros.push("CEP");
+  }
 
   //se nao tiver erros, passe para o next
   if(erros.length == 0){

@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Market-Place",
-    "dateExported": "2023-04-14T21:41:03.851Z",
+    "dateExported": "2023-04-16T16:08:09.908Z",
     "version": "1.1",
     "folders": [
         {
@@ -53,24 +53,13 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3abb3079-3111-4ae9-91b7-8cac2c763b48",
             "name": "FindAll",
-            "url": "{{BaseURL}}{{Port}}/usuario/findAll?limit=10&offset=0",
+            "url": "{{BaseURL}}{{Port}}/usuario/findAll",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-04-03T13:17:50.641Z",
-            "modified": "2023-04-14T18:24:41.275Z",
+            "modified": "2023-04-07T18:23:45.708Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "limit",
-                    "value": "10",
-                    "isPath": false
-                },
-                {
-                    "name": "offset",
-                    "value": "0",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
@@ -82,11 +71,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3abb3079-3111-4ae9-91b7-8cac2c763b48",
             "name": "findById",
-            "url": "{{BaseURL}}{{Port}}/usuario/findById/642b40e3bced05c25155f18d",
+            "url": "{{BaseURL}}{{Port}}/usuario/findById/642edf9cff77d34366e29c5d",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-04-03T13:18:16.946Z",
-            "modified": "2023-04-14T00:52:27.584Z",
+            "modified": "2023-04-14T02:02:34.150Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -104,12 +93,12 @@
             "method": "POST",
             "sortNum": 40000,
             "created": "2023-04-03T13:18:52.272Z",
-            "modified": "2023-04-13T00:11:53.927Z",
+            "modified": "2023-04-16T03:11:32.005Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "  {\n    \"nome\": \"Paulino1500\",\n    \"email\": \"paulinoNovo1500@mail.com\",\n    \"senha\": \"654321\",\n    \"imagem\": \"img.paulino1500.com/paulinonovo1500.jpg\",\n    \"admin\": true\n  }\n",
+                "raw": "  {\n    \"nome\": \"Paulino17\",\n    \"email\": \"paulinoNovo17@mail.com\",\n    \"senha\": \"654321\",\n    \"imagem\": \"img.paulino17.com/paulinonovo17.jpg\"\n  }\n",
                 "form": []
             },
             "tests": []
@@ -152,22 +141,13 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3abb3079-3111-4ae9-91b7-8cac2c763b48",
             "name": "Add Address",
-            "url": "{{BaseURL}}{{Port}}/usuario/addAddress/643748c9c903e03af7f91139",
+            "url": "{{BaseURL}}{{Port}}/usuario/addAddress/642ec9b2a126e2d64d125f1a",
             "method": "POST",
             "sortNum": 70000,
             "created": "2023-04-06T16:16:55.781Z",
-            "modified": "2023-04-14T18:50:07.160Z",
+            "modified": "2023-04-06T17:15:40.677Z",
             "headers": [],
             "params": [],
-            "body": {
-                "type": "json",
-                "raw": "[\n{\n  \"rua\":\"rua teste 1501\",\n  \"numero\":1501,\n  \"CEP\":\"111111-151\"\n},\n{\n  \"rua\":\"rua teste 1502\",\n  \"numero\":1502,\n  \"CEP\":\"111111-152\"\n}\n]",
-                "form": []
-            },
-            "auth": {
-                "type": "bearer",
-                "bearer": "{{token}}"
-            },
             "tests": []
         },
         {
@@ -198,12 +178,12 @@
             "method": "POST",
             "sortNum": 90000,
             "created": "2023-04-06T18:33:30.538Z",
-            "modified": "2023-04-12T22:12:23.950Z",
+            "modified": "2023-04-14T02:13:15.577Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"paulino200@mail.com\",\n  \"senha\": \"123456\"\n}",
+                "raw": "{\n  \"email\": \"paulinoNovo15@mail.com\",\n  \"senha\": \"654321\"\n}",
                 "form": []
             },
             "tests": []
@@ -213,16 +193,16 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "7715d840-8210-4023-908a-738be6fab731",
             "name": "FindAll",
-            "url": "{{BaseURL}}{{Port}}/produto/findAll?limit=10&offset=0",
+            "url": "{{BaseURL}}{{Port}}/produto/findAll/?limit=1&offset=0",
             "method": "GET",
             "sortNum": 100000,
             "created": "2023-04-07T20:48:15.537Z",
-            "modified": "2023-04-14T19:47:45.346Z",
+            "modified": "2023-04-14T14:16:09.120Z",
             "headers": [],
             "params": [
                 {
                     "name": "limit",
-                    "value": "10",
+                    "value": "1",
                     "isPath": false
                 },
                 {
@@ -242,24 +222,13 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "eb84ac26-d1ec-4de2-8cf7-c6e73883b45f",
             "name": "FindAll",
-            "url": "{{BaseURL}}{{Port}}/categoria/findAll?limit=10&offset=0",
+            "url": "{{BaseURL}}{{Port}}/categoria/findAll",
             "method": "GET",
             "sortNum": 100000,
             "created": "2023-04-09T16:38:14.814Z",
-            "modified": "2023-04-14T18:14:37.913Z",
+            "modified": "2023-04-09T16:38:43.655Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "limit",
-                    "value": "10",
-                    "isPath": false
-                },
-                {
-                    "name": "offset",
-                    "value": "0",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
@@ -271,24 +240,13 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3f04ba95-ba14-4d16-930e-1d8c19cc47ae",
             "name": "FindAll",
-            "url": "{{BaseURL}}{{Port}}/carrinho/findAll?limit=10&offset=0",
+            "url": "{{BaseURL}}{{Port}}/carrinho/findAll",
             "method": "GET",
             "sortNum": 100000,
             "created": "2023-04-09T19:35:49.626Z",
-            "modified": "2023-04-14T18:14:52.801Z",
+            "modified": "2023-04-09T19:36:09.183Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "limit",
-                    "value": "10",
-                    "isPath": false
-                },
-                {
-                    "name": "offset",
-                    "value": "0",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
@@ -300,24 +258,13 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "02306a26-d7d0-4d36-ac62-a0707b1bf1f9",
             "name": "FindAll",
-            "url": "{{BaseURL}}{{Port}}/pedido/findAll?limit =1&offset=0",
+            "url": "{{BaseURL}}{{Port}}/pedido/findAll",
             "method": "GET",
             "sortNum": 100000,
             "created": "2023-04-12T14:26:22.788Z",
-            "modified": "2023-04-14T18:15:17.906Z",
+            "modified": "2023-04-12T14:26:57.302Z",
             "headers": [],
-            "params": [
-                {
-                    "name": "limit ",
-                    "value": "1",
-                    "isPath": false
-                },
-                {
-                    "name": "offset",
-                    "value": "0",
-                    "isPath": false
-                }
-            ],
+            "params": [],
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
@@ -347,11 +294,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "eb84ac26-d1ec-4de2-8cf7-c6e73883b45f",
             "name": "FindById",
-            "url": "{{BaseURL}}{{Port}}/categoria/find/6435d93a2559597d132e7654",
+            "url": "{{BaseURL}}{{Port}}/categoria/find/6432ec25441f96aeb683643c",
             "method": "GET",
             "sortNum": 110000,
             "created": "2023-04-09T16:38:14.815Z",
-            "modified": "2023-04-12T22:15:05.278Z",
+            "modified": "2023-04-09T16:47:48.183Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -383,11 +330,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "02306a26-d7d0-4d36-ac62-a0707b1bf1f9",
             "name": "FindById",
-            "url": "{{BaseURL}}{{Port}}/pedido/find/64372fafa5e3e4c4fb63d446",
+            "url": "{{BaseURL}}{{Port}}/pedido/find/6436c1ba4ce353f96198290c",
             "method": "GET",
             "sortNum": 110000,
             "created": "2023-04-12T14:26:22.789Z",
-            "modified": "2023-04-12T22:27:45.238Z",
+            "modified": "2023-04-12T14:41:12.207Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -401,11 +348,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3abb3079-3111-4ae9-91b7-8cac2c763b48",
             "name": "AddFavProduct",
-            "url": "{{BaseURL}}{{Port}}/usuario/addFavProduct/642b2e48bced05c25155f18a",
+            "url": "{{BaseURL}}{{Port}}/usuario/addFavProduct/642edf9cff77d34366e29c5d",
             "method": "POST",
             "sortNum": 117500,
             "created": "2023-04-12T03:24:12.749Z",
-            "modified": "2023-04-14T19:06:47.885Z",
+            "modified": "2023-04-12T04:17:25.321Z",
             "headers": [],
             "params": [],
             "body": {
@@ -428,12 +375,12 @@
             "method": "POST",
             "sortNum": 120000,
             "created": "2023-04-07T22:40:53.922Z",
-            "modified": "2023-04-14T21:14:46.768Z",
+            "modified": "2023-04-07T22:49:05.127Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nome\":\"produto 15\",\n  \"descricao\":\"produto 15\",\n  \"precoUnitario\": 154.5,\n  \"imagem\":\"img.siteimages/produto154.jpg\",\n  \"codigoBarra\": 1236774104,\n  \"categorias\": [\n    {\"_id\":\"6435d92e2559597d132e7650\"}\n    ]\n}",
+                "raw": "{\n  \"nome\":\"produto 3\",\n  \"descricao\":\"produto enlatado 3\",\n  \"precoUnitario\": 12.5,\n  \"imagem\":\"img.siteimages/produto2.jpg\",\n  \"codigoBarra\": 1234567\n}",
                 "form": []
             },
             "auth": {
@@ -451,12 +398,12 @@
             "method": "POST",
             "sortNum": 120000,
             "created": "2023-04-09T16:38:14.816Z",
-            "modified": "2023-04-14T19:45:00.799Z",
+            "modified": "2023-04-09T17:27:13.470Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nome\":\"Teste 1\"\n }",
+                "raw": "{\n  \"nome\":\"eletronicos\"\n }",
                 "form": []
             },
             "auth": {
@@ -474,12 +421,12 @@
             "method": "POST",
             "sortNum": 120000,
             "created": "2023-04-09T19:35:49.628Z",
-            "modified": "2023-04-14T21:31:35.441Z",
+            "modified": "2023-04-09T23:55:16.218Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"produtos\":[\n    { \"_id\":\"64309dce9524c1fcd8b1d045\", \"quantidade\": 320},\n    { \"_id\":\"64309de19524c1fcd8b1d04b\", \"quantidade\": 120}\n    ],\n    \"precoTotal\": 200.53,\n    \"frete\": 180.70\n }",
+                "raw": "{\n  \"produtos\":[\n    { \"_id\":\"64309dce9524c1fcd8b1d045\", \"quantidade\": 100},\n    { \"_id\":\"64309de19524c1fcd8b1d04b\", \"quantidade\": 200}\n    ],\n    \"precoTotal\": 1000.53,\n    \"frete\": 80.70\n }",
                 "form": []
             },
             "auth": {
@@ -497,12 +444,12 @@
             "method": "POST",
             "sortNum": 120000,
             "created": "2023-04-12T14:26:22.790Z",
-            "modified": "2023-04-14T00:06:17.615Z",
+            "modified": "2023-04-12T14:45:06.653Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"produtos\":[\n    { \"_id\":\"64309dce9524c1fcd8b1d045\", \"quantidade\": 1000},\n    { \"_id\":\"64309de19524c1fcd8b1d04b\", \"quantidade\": 2600}\n    ],\n    \"precoTotal\": 1200.80,\n    \"frete\": 150\n }",
+                "raw": "{\n  \"produtos\":[\n    { \"_id\":\"64309dce9524c1fcd8b1d045\", \"quantidade\": 10},\n    { \"_id\":\"64309de19524c1fcd8b1d04b\", \"quantidade\": 20}\n    ],\n    \"precoTotal\": 100.90,\n    \"frete\": 20.50,\n    \"concluido\": false\n }",
                 "form": []
             },
             "auth": {
@@ -562,16 +509,16 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3f04ba95-ba14-4d16-930e-1d8c19cc47ae",
             "name": "Update",
-            "url": "{{BaseURL}}{{Port}}/carrinho/update/64372e27a5e3e4c4fb63d42a",
+            "url": "{{BaseURL}}{{Port}}/carrinho/update/64335064e3c93bc7ba6d5902",
             "method": "PUT",
             "sortNum": 130000,
             "created": "2023-04-09T19:35:49.629Z",
-            "modified": "2023-04-12T22:21:26.897Z",
+            "modified": "2023-04-09T23:59:45.635Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"produtos\": [\n      {\n        \"_id\": \"64309dce9524c1fcd8b1d045\",\n        \"quantidade\": 100\n      },\n      {\n        \"_id\": \"64309de19524c1fcd8b1d04b\",\n        \"quantidade\": 200\n      }\n    ],\n    \"precoTotal\": 1500.60,\n    \"frete\": 90.50\n  }",
+                "raw": "{\n    \"produtos\": [\n      {\n        \"_id\": \"64309dce9524c1fcd8b1d045\",\n        \"quantidade\": 10\n      },\n      {\n        \"_id\": \"64309de19524c1fcd8b1d04b\",\n        \"quantidade\": 200\n      }\n    ],\n    \"precoTotal\": 120,\n    \"frete\": 90\n  }",
                 "form": []
             },
             "auth": {
@@ -585,11 +532,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "7715d840-8210-4023-908a-738be6fab731",
             "name": "Delete",
-            "url": "{{BaseURL}}{{Port}}/produto/delete/643883a34ee88e31ed6ad44c",
+            "url": "{{BaseURL}}{{Port}}/produto/delete/64309d179524c1fcd8b1d03a",
             "method": "DELETE",
             "sortNum": 140000,
             "created": "2023-04-07T22:41:05.656Z",
-            "modified": "2023-04-14T21:10:35.022Z",
+            "modified": "2023-04-07T22:51:51.840Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -603,11 +550,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "eb84ac26-d1ec-4de2-8cf7-c6e73883b45f",
             "name": "Delete",
-            "url": "{{BaseURL}}{{Port}}/categoria/delete/6435d93a2559597d132e7654",
+            "url": "{{BaseURL}}{{Port}}/categoria/delete/6432ec0a441f96aeb6836434",
             "method": "DELETE",
             "sortNum": 140000,
             "created": "2023-04-09T16:38:14.818Z",
-            "modified": "2023-04-12T22:16:05.657Z",
+            "modified": "2023-04-09T17:26:57.505Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -621,11 +568,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "3f04ba95-ba14-4d16-930e-1d8c19cc47ae",
             "name": "Delete",
-            "url": "{{BaseURL}}{{Port}}/carrinho/delete/64372e27a5e3e4c4fb63d42a",
+            "url": "{{BaseURL}}{{Port}}/carrinho/delete/64335064e3c93bc7ba6d5902",
             "method": "DELETE",
             "sortNum": 140000,
             "created": "2023-04-09T19:35:49.631Z",
-            "modified": "2023-04-12T22:22:05.921Z",
+            "modified": "2023-04-10T00:00:17.822Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -639,11 +586,11 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "02306a26-d7d0-4d36-ac62-a0707b1bf1f9",
             "name": "Delete",
-            "url": "{{BaseURL}}{{Port}}/pedido/delete/64372fafa5e3e4c4fb63d446",
+            "url": "{{BaseURL}}{{Port}}/pedido/delete/6436c1ba4ce353f96198290c",
             "method": "DELETE",
             "sortNum": 140000,
             "created": "2023-04-12T14:26:22.792Z",
-            "modified": "2023-04-12T22:28:01.143Z",
+            "modified": "2023-04-12T14:46:08.321Z",
             "headers": [],
             "params": [],
             "auth": {
@@ -657,16 +604,16 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "7715d840-8210-4023-908a-738be6fab731",
             "name": "Add categoria",
-            "url": "{{BaseURL}}{{Port}}/produto/addCategoria/643883a34ee88e31ed6ad44c",
+            "url": "{{BaseURL}}{{Port}}/produto/addCategoria/64309dce9524c1fcd8b1d045",
             "method": "POST",
             "sortNum": 150000,
             "created": "2023-04-09T17:57:32.353Z",
-            "modified": "2023-04-14T21:09:51.255Z",
+            "modified": "2023-04-09T18:37:48.090Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"_id\":\"64372d81a5e3e4c4fb63d40f\"\n}",
+                "raw": "{\n  \"_id\":\"6432eeac34f3a8186a415821\"\n}",
                 "form": []
             },
             "auth": {
@@ -703,36 +650,18 @@
             "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
             "containerId": "7715d840-8210-4023-908a-738be6fab731",
             "name": "Remove categoria",
-            "url": "{{BaseURL}}{{Port}}/produto/removeCategoria/6438836f4ee88e31ed6ad435",
+            "url": "{{BaseURL}}{{Port}}/produto/removeCategoria/64309dce9524c1fcd8b1d045",
             "method": "DELETE",
             "sortNum": 170000,
             "created": "2023-04-09T17:57:57.772Z",
-            "modified": "2023-04-14T21:07:33.138Z",
+            "modified": "2023-04-09T18:49:15.245Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"_id\":\"64372dc6a5e3e4c4fb63d41c\"\n}",
+                "raw": "{\n  \"_id\":\"6432eeac34f3a8186a415821\"\n}",
                 "form": []
             },
-            "auth": {
-                "type": "bearer",
-                "bearer": "{{token}}"
-            },
-            "tests": []
-        },
-        {
-            "_id": "01429752-cded-44ef-8185-13d07e2dd9ca",
-            "colId": "1228236e-02ee-4db0-8d61-9d10f1b615fe",
-            "containerId": "02306a26-d7d0-4d36-ac62-a0707b1bf1f9",
-            "name": "UpdateStatus",
-            "url": "{{BaseURL}}{{Port}}/pedido/updateStatus/6437301ca5e3e4c4fb63d44d",
-            "method": "PATCH",
-            "sortNum": 180000,
-            "created": "2023-04-12T22:31:47.018Z",
-            "modified": "2023-04-12T22:40:24.842Z",
-            "headers": [],
-            "params": [],
             "auth": {
                 "type": "bearer",
                 "bearer": "{{token}}"
