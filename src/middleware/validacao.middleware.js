@@ -24,7 +24,60 @@ const validaUsuario = (req, res, next) => {
   return next();
 }
 
+const validaCliente = (req, res, next) => {
+  if (!req.body.nome) {
+    return res.status(400).send({ message: `O campo 'nome' precisa ser preenchido` });
+  }
+  // confirmar o type de objeto
+  if (req.body.nome){
+    console.log(typeof(req.body.nome));
+  }  
+  if (!req.body.email) {
+    return res.status(400).send({ message: `O campo 'email' precisa ser preenchido` });
+  }
+  if (!req.body.senha) {
+    return res.status(400).send({ message: `O campo 'senha' precisa ser preenchido` });
+ }
+ if (!req.body.imagem) {
+    return res.status(400).send({ message: `O campo 'imagem' precisa ser preenchido` });
+  }
+ 
+
+  return next();
+}
+
 const validaEndereco = (req, res, next) => {
+  let erros = [];
+
+  req.body.map((value, key) => {
+
+    if(!value.rua){
+      erros.push(`'${key+1} - rua'`)
+    }
+    if(!value.numero){
+      erros.push(`'${key+1} - numero'`)
+    }
+    if(!value.CEP){
+      erros.push(`'${key+1} - CEP'`)
+    }
+  });
+
+  //se nao tiver erros, passe para o next
+  if(erros.length == 0){
+    return next();
+
+} else {
+  //se for um erro
+    if(erros.length > 1){
+      return res.status(400).send({ message: `Os campos ${erros} precisam ser preenchidos!`  });
+    }else {
+      //se for mais de um
+      return res.status(400).send({ message: `O campo ${erros} precisa ser preenchido!`  });
+    }
+}
+}
+
+const validaClienteEndereco = (req, res, next) => {
   let erros = [];
 
   req.body.map((value, key) => {
@@ -251,6 +304,7 @@ const validaProdutosCarrinhoPedido = (req, res, next) => {
 
 module.exports = {
     validaUsuario,
+    validaCliente,
     validaProduto,
     validaCategoria,
     validaPedido,
@@ -258,6 +312,7 @@ module.exports = {
     validaIdParams,
     valida_IdBody,
     validaLogin,
-    validaEndereco, 
+    validaEndereco,
+    validaClienteEndereco, 
     validaProdutosCarrinhoPedido
 }

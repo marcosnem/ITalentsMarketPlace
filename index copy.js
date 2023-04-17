@@ -5,7 +5,6 @@ const connectTODatabase = require("./src/database/database"); //arquivo de conex
 
 // rotas importadas
 const usuario = require("./src/router/usuario.router"); //arquivo da rota do usuario
-const cliente = require("./src/router/cliente.router"); //arquivo da rota do usuario
 const auth = require("./src/router/auth.router"); //arquivo da rota do usuario
 const produto = require("./src/router/produto.router"); //arquivo da rota do produto
 const categoria = require("./src/router/categoria.router");//arquivo da rota da categoria
@@ -23,7 +22,6 @@ connectTODatabase(); //conectando com o banco teste
 
 // uso das rotas importadas: usuario, login, auth, produto, categoria e carrinho
 app.use("/usuario", usuario);
-app.use("/cliente", cliente);
 app.use("/auth", auth);
 app.use("/produto", produto);
 app.use("/categoria", categoria);

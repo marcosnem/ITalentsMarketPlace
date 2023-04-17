@@ -1,17 +1,17 @@
 //funcoes baseadas nas rotas
 
-const userService = require("../service/usuario.service");
+const clienteService = require("../service/cliente.service");
 
-const findUserByIdController = async (req,res) => {
+const findClienteByIdController = async (req,res) => {
 try{
     
-   const user = await userService.findUserByIdService(req.params.id);
+   const cliente = await clienteService.findClienteByIdService(req.params.id);
 
-   if(!user) {
-    return res.status(404).send({message: "Usuário não encontrado"});
+   if(!cliente) {
+    return res.status(404).send({message: "Cliente não encontrado"});
    }
 
-   return res.status(200).send(user);
+   return res.status(200).send(cliente);
 
 }catch (err){
 
@@ -28,10 +28,10 @@ try{
 
 };
 
-const findAllUsersController = async (req, res) => {
+const findAllClientesController = async (req, res) => {
     try{
 
-        return res.status(200).send(await userService.findAllUsersService(req.query.limit, req.query.offset));   
+        return res.status(200).send(await clienteService.findAllClientesService(req.query.limit, req.query.offset));   
 
     }catch (err){
         
@@ -43,7 +43,7 @@ const findAllUsersController = async (req, res) => {
 
 };
 
-const createUserController = async (req, res) => {
+const createClienteController = async (req, res) => {
     try{
 
         const body = req.body;
@@ -52,7 +52,7 @@ const createUserController = async (req, res) => {
             return res.status(400).send({message: `O campo 'nome' precisa ser preenchido!`});
         }
 
-        res.status(201).send(await userService.createUserService(body));
+        res.status(201).send(await clienteService.createClienteService(body));
 
     //fazer os if com o restante dos campos do usuario    
 
@@ -67,7 +67,7 @@ const createUserController = async (req, res) => {
 
 };
 
-const updateUserController = async (req,res) => {
+const updateClienteController = async (req,res) => {
     try{
 
         const body = req.body;
@@ -76,7 +76,7 @@ const updateUserController = async (req,res) => {
             return res.status(400).send({message: `O campo 'nome' precisa ser preenchido!`});
         }
 
-        return res.send(await userService.updateUserService(req.params.id, body));
+        return res.send(await clienteService.updateClienteService(req.params.id, body));
    
 
     }catch (err){
@@ -88,18 +88,18 @@ const updateUserController = async (req,res) => {
     }
 };
 
-const removeUserController = async (req,res) => {
+const removeClienteController = async (req,res) => {
     try{
 
-        const deletedUser = await userService.removeUserService(req.params.id);
+        const deletedCliente = await clienteService.removeClienteService(req.params.id);
 
-        console.log(deletedUser);
+        console.log(deletedCliente);
 
-        if(deletedUser == null){
-            return res.status(200).send({message: `Usuário não encontrado, tente novamente`});
+        if(deletedCliente == null){
+            return res.status(200).send({message: `Cliente não encontrado, tente novamente`});
 
         }else {
-            return res.status(404).send({message:  `Usuário deletado com sucesso` });
+            return res.status(404).send({message:  `Cliente deletado com sucesso` });
         }   
 
     }catch (err){
@@ -112,10 +112,10 @@ const removeUserController = async (req,res) => {
 
 };
 
-const addUserAddressController = async (req,res) => {
+const addClienteAddressController = async (req,res) => {
     try{
         //Recebe o ID e todo o body
-        const endereco = await userService.addUserAddressService(req.params.id, req.body);   
+        const endereco = await clienteService.addClienteAddressService(req.params.id, req.body);   
 
         console.log(endereco);
         if(endereco.value == null){
@@ -143,10 +143,10 @@ const addUserAddressController = async (req,res) => {
 
 };
 
-const removeUserAddressController = async (req,res) => {
+const removeClienteAddressController = async (req,res) => {
     try{
 // recebe do recebe ID e addressId para remover o endereço
-const endereco = await userService.removeUserAddressService(req.body.id, req.body.addressId);
+const endereco = await clienteService.removeClienteAddressService(req.body.id, req.body.addressId);
 
 let found = false;
 //faz o mapeamento dos valores do array enderecos e comparando se é o mesmo do addressId
@@ -179,47 +179,47 @@ if(found){
 
 };
 
-// const addUserFavProductController = async (req,res) => {
-//     try{
+const addClienteFavProductController = async (req,res) => {
+    try{
 
-//         res.status(201).send(await userService.addUserFavProductService(req.params.id, req.body));   
+        res.status(201).send(await clienteService.addClienteFavProductService(req.params.id, req.body));   
 
-//     }catch (err){
+    }catch (err){
         
-//         console.log(`erro: ${err.message}`);
+        console.log(`erro: ${err.message}`);
     
-//         return res.status(500).send({message: `Erro inesperado, tente novamente!`});
+        return res.status(500).send({message: `Erro inesperado, tente novamente!`});
             
-//     }
-// };
+    }
+};
 
-// const removeUserFavProductController = async (req,res) => {
-//     try{
+const removeClienteFavProductController = async (req,res) => {
+    try{
 
-//         res.status(201).send(await userService.removeUserFavProductService(req.params.id, req.body));   
+        res.status(201).send(await clienteService.removeClienteFavProductService(req.params.id, req.body));   
 
 
-//     }catch (err){
+    }catch (err){
         
-//         console.log(`erro: ${err.message}`);
+        console.log(`erro: ${err.message}`);
     
-//         return res.status(500).send({message: `Erro inesperado, tente novamente!`});
+        return res.status(500).send({message: `Erro inesperado, tente novamente!`});
     
         
-//     }
+    }
 
 
-// };
+};
 
 
 module.exports = {
-    findUserByIdController,
-    findAllUsersController,
-    createUserController,
-    updateUserController,
-    removeUserController,
-    addUserAddressController,
-    removeUserAddressController
-    // addUserFavProductController,
-    // removeUserFavProductController,
+    findClienteByIdController,
+    findAllClientesController,
+    createClienteController,
+    updateClienteController,
+    removeClienteController,
+    addClienteAddressController,
+    removeClienteAddressController,
+    addClienteFavProductController,
+    removeClienteFavProductController,
 }

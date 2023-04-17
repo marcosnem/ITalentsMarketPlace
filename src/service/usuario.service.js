@@ -75,44 +75,44 @@ return Usuario.findOneAndUpdate(
 
 }
 
-const addUserFavProductService = (id, produto) => {
+// const addUserFavProductService = (id, produto) => {
 
-    return Usuario.findOneAndUpdate({
-        _id: id,
-    },
-    {
-        $push: {
+//     return Usuario.findOneAndUpdate({
+//         _id: id,
+//     },
+//     {
+//         $push: {
             
-            produtos_fav: {
-                _id: produto._id,
-            }
-        }
-    },
-    {
-        rawResult: true,
-    }
-    );
-}
+//             produtos_fav: {
+//                 _id: produto._id,
+//             }
+//         }
+//     },
+//     {
+//         rawResult: true,
+//     }
+//     );
+// }
 
-const removeUserFavProductService = (id, produto) => {
+// const removeUserFavProductService = (id, produto) => {
 
-    return Usuario.findOneAndUpdate(
-    {
-        _id: id,
-    },
-    {
-        $pull: {
+//     return Usuario.findOneAndUpdate(
+//     {
+//         _id: id,
+//     },
+//     {
+//         $pull: {
             
-            produtos_fav: {
-                _id: produto._id,
-            }
-        }
-    },
-    {
-        rawResult: true,
-    }
-    );
-}
+//             produtos_fav: {
+//                 _id: produto._id,
+//             }
+//         }
+//     },
+//     {
+//         rawResult: true,
+//     }
+//     );
+// }
 
 module.exports = {
 
@@ -122,9 +122,9 @@ createUserService,
 updateUserService,
 removeUserService,
 addUserAddressService,
-removeUserAddressService,
-addUserFavProductService,
-removeUserFavProductService,
+removeUserAddressService
+// addUserFavProductService,
+// removeUserFavProductService,
 
 
 }

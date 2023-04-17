@@ -423,7 +423,6 @@ Criar na raiz do projeto o arquivo swagger.json
 Instalar dependencias
 
 1. npm i swagger-ui-express
-
 Criar o docs.router.js dentro de router
 Definir a rota 
 
@@ -445,7 +444,11 @@ criado as respostas dos codigos (200,401,404 e 500)
 
 Aula 29 - parametros da endpoints
 
-Aula 30 parei
+Aula 30 
+
+Docs CRUD e Usuario complemento
+
+parameters ID e body dentro do /usuario/update
 
 
 

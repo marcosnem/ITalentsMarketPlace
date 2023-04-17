@@ -29,8 +29,8 @@
         ],
 
         "summary": "Lista todos os usuario da API",
-        "description": "Rota responsável por listar todos os usuários da API",
-        "tags": ["Usuários"],
+        "description": "Rota responsável por listar todos os Usuario da API",
+        "tags": ["Usuario"],
         "parameters": [
           {
             "in": "query",
@@ -51,7 +51,7 @@
           "200": {
             "description": "OK, tarefa realizada com sucesso!",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -65,7 +65,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -80,7 +80,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -95,7 +95,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -111,7 +111,7 @@
       }
     },
 
-    "/usuario/find/{id}": {
+    "/usuario/findById/{id}": {
       "get": {
         "security": [
           {
@@ -121,13 +121,13 @@
 
         "summary": "Lista um usuario correspondente a ID informada da API",
         "description": "Rota responsável por localizar um usuário da API através do ID informada",
-        "tags": ["Usuários"],
+        "tags": ["Usuario"],
         "parameters": [
           {
-            "in": "query",
+            "in": "path",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "string"
             },
             "name": "id"
           }
@@ -136,7 +136,7 @@
           "200": {
             "description": "Retorna um user encontro pelo ID informado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "$ref": "#/components/schemas/Usuario"
@@ -147,7 +147,7 @@
           "401": {
             "description": "Unauthorized, Erro de autenticação, problema com o token",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -162,7 +162,7 @@
           "404": {
             "description": "Not found, nenhum usuário encontrado",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -177,7 +177,7 @@
           "500": {
             "description": "Internal Server Error, erro com o servidor",
             "content": {
-              "aplication/json": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -194,91 +194,591 @@
     },
     "/usuario/create": {
       "post": {
-        "security": [
-            {
-              "bearerAuth": []
-            }
-          ],
         "summary": "Criar um user novo",
         "description": "Rota responsável por criar um novo usuário a partir das informações passadas no endpoint",
-        "tags": ["Usuários"],
-        "parameters": [
-            {
-                "in":"body",
-                "required": true,
-                "schema": {
-                    "$ref": "#/components/schemas/Usuario"
-                },
-                "name":"body"
+        "tags": ["Usuario"],
+        "requestBody": 
+        {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Usuario"
+              }
             }
-            
-        ],
+          },
+          "required": true
+        },
         "responses": {
-            "201": {
-                "description": "Retorna o objeto criado no banco",
-                "content": {
-                    "aplication/json": {
-                      "schema": {
-                        "type": "object",
-                        "$ref": "#/components/schemas/Usuario"
-                      }
-                    }
-                  }
-            },
-            "500": {
-                "description": "Internal Server Error, erro com o servidor",
-                "content": {
-                  "aplication/json": {
-                    "schema": {
-                      "type": "object",
-                      "properties": {
-                        "message": {
-                          "type": "string"
-                        }
-                      }
+          "201": {
+            "description": "Retorna o objeto criado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
                     }
                   }
                 }
               }
+            }
+          }
         }
       }
     },
     "/usuario/update/{id}": {
-        "put": {
-            "security": [
-                {
-                  "bearerAuth": []
+      "put": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": " Retorna o usuario atualizado no banco",
+        "description": "Rota responsável por atualizar um usuário através do ID informada",
+        "tags": ["Usuario"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna o objeto atualizado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
                 }
-              ],
-            "summary": "Lista um usuario correspondente a ID informada da API",
-            "description": "Rota responsável por localizar um usuário da API através do ID informada",
-            "tags": ["Usuários"],
-            "responses": {
-                "200": {
-                    "description": "aaaa"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
                 }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
             }
           }
+        }
+      }
     },
 
-    "/usuario/delete/{id}": {
-        "delete": {
-            "security": [
-                {
-                  "bearerAuth": []
+    "/usuario/remove/{id}": {
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Deleta um usuario correspondente a ID informada da API",
+        "description": "Rota responsável por localizar um usuário da API através do ID informada",
+        "tags": ["Usuario"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o objeto deletado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
                 }
-              ],
-            "summary": "Lista um usuario correspondente a ID informada da API",
-            "description": "Rota responsável por localizar um usuário da API através do ID informada",
-            "tags": ["Usuários"],
-            "responses": {
-                "200": {
-                    "description": "aaaa"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
                 }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
             }
           }
+        }
+      }
+    },
+    "/usuario/addAddress/{id}": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Adiciona o endereço no usuário",
+        "description": "Rota responsável por adicionar endereços no usuario informado",
+        "tags": ["Usuario"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/UserAddress"
+              }
+            }
+          },
+          "required": true
+        },
+
+        "responses": {
+          "201": {
+            "description": "Retorna um usuario com seu novo endereço",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario/removeAddress/": {
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Remove endereço do usuário",
+        "description": "Rota responsável por remover endereços do usuário informado",
+        "tags": ["Usuario"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "addressId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna um usuário com seu endereço removido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum endereço encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario/addFavProduct/{id}": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Adiciona produto favorito do usuário",
+        "description": "Rota responsável por adicionar produtos favoritos",
+        "tags": ["Usuario"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/ProductFav"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Retorna um usuário com seu novo favorito",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/usuario/removeFavProduct/{id}": {
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Remove produto favorito do usuário",
+        "description": "Rota responsável por remover os produtos favoritos do usuário informado",
+        "tags": ["Usuario"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string"
+                  }                 
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna um usuário com seu produto favorito removido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
+
   "components": {
     "securitySchemes": {
       "bearerAuth": {
@@ -344,6 +844,41 @@
           },
           "admin": {
             "type": "boolean"
+          }
+        }
+      },
+      "UserAddress": {
+        "type": "array",
+        "items": {
+          "properties": {
+            "rua": {
+              "type": "string"
+            },
+            "numero": {
+              "type": "number"
+            },
+            "complemento": {
+              "type": "string"
+            },
+            "CEP": {
+              "type": "string"
+            },
+            "createAt": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ProductFav": {
+        "type": "array",
+        "items": {
+          "properties": {
+            "_id": {
+              "type": "string"
+            },
+            "createAt": {
+              "type": "string"
+            }
           }
         }
       }
