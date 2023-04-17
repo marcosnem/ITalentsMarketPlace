@@ -26,18 +26,29 @@ const validaUsuario = (req, res, next) => {
 const validaEndereco = (req, res, next) => {
   let erros = [];
 
-  req.body.map((value, key) => {
+  // req.body.map((value, key) => {
 
-    if(!value.rua){
-      erros.push(`'${key+1} - rua'`)
-    }
-    if(!value.numero){
-      erros.push(`'${key+1} - numero'`)
-    }
-    if(!value.CEP){
-      erros.push(`'${key+1} - CEP'`)
-    }
-  });
+  //   if (!value.rua) {
+  //     erros.push(`'${key + 1} - rua'`);
+  //   }
+  //   if (!value.numero) {
+  //     erros.push(`'${key + 1} - numero'`);
+  //   }
+  //   if (!value.CEP) {
+  //     erros.push(`'${key + 1} - CEP'`);
+  //   }
+  //  });
+  if(!req.body.rua){
+    erros.push("rua");
+  }
+
+  if(!req.body.numero){
+    erros.push("numero");
+  }
+
+  if(!req.body.CEP){
+    erros.push("CEP");
+  }
 
   //se nao tiver erros, passe para o next
   if(erros.length == 0){
