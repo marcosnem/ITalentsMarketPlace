@@ -1,6 +1,10 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
+// const bodyParser = require("body-parser");
+// const swaggerUi = require("swagger-ui-express");
+// const mainRoutes = require("./src/router/main");
+
 
 const connectTODatabase = require("./src/database/database"); //arquivo de conexao do banco
 
@@ -13,12 +17,14 @@ const categoria = require("./src/router/categoria.router"); //arquivo da rota da
 const carrinho = require("./src/router/carrinho.router"); //arquivo da rota da carrinho
 const pedido = require("./src/router/pedido.router"); //arquivo da rota da pedido
 const docs = require("./src/router/docs.router"); //arquivo da rota da documentacao
+// const mainRoutes = require("./src/router/main");
 
 const app = express();
 
 const port = 3000;
 
 app.use(express.json());
+// app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors(
   {
     origin: ["localhost:3000", "localhost:3001"],
@@ -37,6 +43,7 @@ app.use("/categoria", categoria);
 app.use("/carrinho", carrinho);
 app.use("/pedido", pedido);
 app.use("/docs", docs);
+// app.use("/main", mainRoutes);
 
 app.get("/", (req, res) => {
   res.send({

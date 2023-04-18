@@ -20,6 +20,88 @@
     }
   ],
   "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "Logar no sistema",
+        "description": "Rota responsável por login dos usuários",
+        "tags": ["Login"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um cliente com seu produto favorito removido",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário credenciado encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },     
     "/usuario/findAll": {
       "get": {
         "security": [
@@ -110,7 +192,6 @@
         }
       }
     },
-
     "/usuario/findById/{id}": {
       "get": {
         "security": [
@@ -330,7 +411,6 @@
         }
       }
     },
-
     "/usuario/remove/{id}": {
       "delete": {
         "security": [
@@ -591,7 +671,468 @@
         }
       }
     },
-    "/usuario/addFavProduct/{id}": {
+    "/cliente/findAll": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+
+        "summary": "Lista todos os clientes",
+        "description": "Rota responsável por listar todos os clientes",
+        "tags": ["Cliente"],
+        "parameters": [
+          {
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "name": "limit"
+          },
+          {
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "name": "offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de clientes disponível!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Cliente"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum usuário encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cliente/findById/{id}": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+
+        "summary": "Lista um cliente correspondente a ID informada",
+        "description": "Rota responsável por localizar um cliente através do ID informada",
+        "tags": ["Cliente"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        
+        "responses": {
+          "200": {
+            "description": "Retorna um cliente encontro pelo ID informado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum cliente encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },   
+    "/cliente/create": {
+      "post": {
+        "summary": "Criar um novo cliente",
+        "description": "Rota responsável por criar um novo cliente a partir das informações passadas no endpoint",
+        "tags": ["Cliente"],
+        "requestBody": 
+        {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Cliente"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Retorna o objeto criado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cliente/update/{id}": {
+      "put": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Atualiza um  cliente",
+        "description": "Rota responsável por atualizar um cliente a partir das informações passadas no endpoint",
+        "tags": ["Cliente"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "senha": {
+                  "example": "any"
+                },
+                "imagem": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cliente/remove/{id}": {
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Remove um  cliente",
+        "description": "Rota responsável por remover um cliente a partir das informações passadas no endpoint",
+        "tags": ["Cliente"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cliente/addAddress/{id}": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Adiciona o endereço no cliente",
+        "description": "Rota responsável por adicionar endereços no cliente informado",
+        "tags": ["Cliente"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/ClienteAddress"
+              }
+            }
+          },
+          "required": true
+        },
+
+        "responses": {
+          "201": {
+            "description": "Retorna um cliente com seu novo endereço",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Cliente"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum cliente encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cliente/removeAddress": {
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Remove um endereço de cliente",
+        "description": "Rota responsável por remover endereço do cliente informado",
+        "tags": ["Cliente"],
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "addressId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cliente/addFavProduct/{id}": {
       "post": {
         "security": [
           {
@@ -600,7 +1141,7 @@
         ],
         "summary": "Adiciona produto favorito do usuário",
         "description": "Rota responsável por adicionar produtos favoritos",
-        "tags": ["Usuario"],
+        "tags": ["Cliente"],
         "parameters": [
           {
             "in": "path",
@@ -629,7 +1170,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Usuario"
+                  "$ref": "#/components/schemas/Cliente"
                 }
               }
             }
@@ -650,7 +1191,7 @@
             }
           },
           "404": {
-            "description": "Not found, nenhum usuário encontrado",
+            "description": "Not found, nenhum cliente encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -682,16 +1223,16 @@
         }
       }
     },
-    "/usuario/removeFavProduct/{id}": {
+    "/cliente/removeFavProduct/{id}": {
       "delete": {
         "security": [
           {
             "bearerAuth": []
           }
         ],
-        "summary": "Remove produto favorito do usuário",
-        "description": "Rota responsável por remover os produtos favoritos do usuário informado",
-        "tags": ["Usuario"],
+        "summary": "Remove produto favorito do cliente",
+        "description": "Rota responsável por remover os produtos favoritos do cliente informado",
+        "tags": ["Cliente"],
         "parameters": [
           {
             "in": "path",
@@ -719,12 +1260,12 @@
         },
         "responses": {
           "200": {
-            "description": "Retorna um usuário com seu produto favorito removido",
+            "description": "Retorna um cliente com seu produto favorito removido",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "$ref": "#/components/schemas/Usuario"
+                  "$ref": "#/components/schemas/Cliente"
                 }
               }
             }
@@ -745,7 +1286,7 @@
             }
           },
           "404": {
-            "description": "Not found, nenhum usuário encontrado",
+            "description": "Not found, nenhum cliente encontrado",
             "content": {
               "application/json": {
                 "schema": {
@@ -776,112 +1317,1267 @@
           }
         }
       }
+    },   
+    "/produto/findAll": {
+      "get": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+
+        "summary": "Lista todos os produtos",
+        "description": "Rota responsável por listar todos os produtos",
+        "tags": ["Produto"],
+        "parameters": [
+          {
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "name": "limit"
+          },
+          {
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "name": "offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Lista de clientes disponível!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/components/schemas/Produto"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum produto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto/findById/{id}": {
+      "get": {   
+        "security": [
+        {
+          "bearerAuth": []
+        }
+      ],
+      "summary": "Lista produto pela ID",
+      "description": "Rota responsável por listar o produto da ID",
+      "tags": ["Produto"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna um produto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum produto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },  
+    "/produto/create": {
+      "post": {
+        "summary": "Criar um novo produto",
+        "description": "Rota responsável por criar um novo produto a partir das informações passadas no endpoint",
+        "tags": ["Produto"],
+        "requestBody": 
+        {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Produto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Retorna o objeto criado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto/update/{id}": {
+      "put": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": " Retorna o produto atualizado no banco",
+        "description": "Rota responsável por atualizar um produto através do ID informada",
+        "tags": ["Produto"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Produto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna o objeto atualizado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/UsuaProduto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum produto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto/delete/{id}": {
+      "delete": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Deleta um produto correspondente a ID informada da API",
+        "description": "Rota responsável por delletar um produto através do ID informada",
+        "tags": ["Produto"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna o objeto deletado no banco",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum produto encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto/addCategoria/{id}": {
+      "post": {
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Adiciona uma categoria no produto",
+        "description": "Rota responsável por adicionar catergoria no produto informado",
+        "tags": ["Produto"],
+        "parameters": [
+          {
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "name": "id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "$ref": "#/components/schemas/Categoria"
+              }
+            }
+          },
+          "required": true
+        },
+
+        "responses": {
+          "201": {
+            "description": "Retorna um produto com sua nova categoria",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "$ref": "#/components/schemas/Produto"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized, Erro de autenticação, problema com o token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found, nenhum categoria encontrado",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error, erro com o servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/produto/removeCategoria/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/categoria/find/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/categoria/findAll": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/categoria/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/categoria/update/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nome": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/categoria/delete/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/carrinho/find/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/carrinho/findAll": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/carrinho/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "produtos": {
+                  "example": "any"
+                },
+                "precoTotal": {
+                  "example": "any"
+                },
+                "frete": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/carrinho/update/{id}": {
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "precoTotal": {
+                  "example": "any"
+                },
+                "frete": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/carrinho/delete/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pedido/find/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pedido/findAll": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pedido/create": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "produtos": {
+                  "example": "any"
+                },
+                "precoTotal": {
+                  "example": "any"
+                },
+                "frete": {
+                  "example": "any"
+                },
+                "concluido": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pedido/delete/{id}": {
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/pedido/updateStatus/{id}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
 
-  "components": {
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
+"components": {
+  "securitySchemes": {
+    "bearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
+    }
+  },
+
+  "schemas": {
+    "Usuario": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "senha": {
+          "type": "string"
+        },
+        "imagem": {
+          "type": "string"
+        },
+        "enderecos": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "rua": {
+                "type": "string"
+              },
+              "numero": {
+                "type": "number"
+              },
+              "complemento": {
+                "type": "string"
+              },
+              "CEP": {
+                "type": "string"
+              },
+              "createAt": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "createAt": {
+          "type": "string"
+        },
+        "admin": {
+          "type": "boolean"
+        }
       }
     },
-
-    "schemas": {
-      "Usuario": {
-        "type": "object",
+    "Cliente": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "senha": {
+          "type": "string"
+        },
+        "imagem": {
+          "type": "string"
+        },
+        "enderecos": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "rua": {
+                "type": "string"
+              },
+              "numero": {
+                "type": "number"
+              },
+              "complemento": {
+                "type": "string"
+              },
+              "CEP": {
+                "type": "string"
+              },
+              "createAt": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "produtos_fav": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "_id": {
+                "type": "string"
+              },
+              "createAt": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "createAt": {
+          "type": "string"
+        }
+     
+      }
+    },
+  
+    "UserAddress": {
+      "type": "array",
+      "items": {
         "properties": {
-          "nome": {
+          "rua": {
             "type": "string"
           },
-          "email": {
+          "numero": {
+            "type": "number"
+          },
+          "complemento": {
             "type": "string"
           },
-          "senha": {
+          "CEP": {
             "type": "string"
-          },
-          "imagem": {
-            "type": "string"
-          },
-          "enderecos": {
-            "type": "array",
-            "items": {
-              "properties": {
-                "rua": {
-                  "type": "string"
-                },
-                "numero": {
-                  "type": "number"
-                },
-                "complemento": {
-                  "type": "string"
-                },
-                "CEP": {
-                  "type": "string"
-                },
-                "createAt": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "produtos_fav": {
-            "type": "array",
-            "items": {
-              "properties": {
-                "_id": {
-                  "type": "string"
-                },
-                "createAt": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "createAt": {
             "type": "string"
-          },
-          "admin": {
-            "type": "boolean"
-          }
-        }
-      },
-      "UserAddress": {
-        "type": "array",
-        "items": {
-          "properties": {
-            "rua": {
-              "type": "string"
-            },
-            "numero": {
-              "type": "number"
-            },
-            "complemento": {
-              "type": "string"
-            },
-            "CEP": {
-              "type": "string"
-            },
-            "createAt": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "ProductFav": {
-        "type": "array",
-        "items": {
-          "properties": {
-            "_id": {
-              "type": "string"
-            },
-            "createAt": {
-              "type": "string"
-            }
           }
         }
       }
-    }
+    },
+    "ClienteAddress": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "rua": {
+            "type": "string"
+          },
+          "numero": {
+            "type": "number"
+          },
+          "complemento": {
+            "type": "string"
+          },
+          "CEP": {
+            "type": "string"
+          },
+          "createAt": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ProductFav": {
+      "type": "array",
+      "items": {
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "createAt": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Produto": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string"
+        },
+        "descricao": {
+          "type": "string"
+        },
+        "precoUnitario": {
+          "type": "number"
+        },
+        "imagem": {
+          "type": "string"
+        },
+        "codigoBarra": {
+          "type": "number"
+        },
+        "categorias": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "_id": {
+                "type": "string"
+             },
+              "createAt": {
+                "type": "string"
+              }
+            }
+          }
+        }
   }
 }
+  }}}

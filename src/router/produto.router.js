@@ -8,7 +8,7 @@ const paginacao = require("../middleware/paginacao.middleware");
 
 
 // rotas do produto
-router.get("/find/:id", authMiddleware, validaIdParams, produtoController.findProductByIdController);
+router.get("/findById/:id", authMiddleware, validaIdParams, produtoController.findProductByIdController);
 router.get("/findAll", authMiddleware, paginacao, produtoController.findAllProductsController);
 
 router.post("/create", authMiddleware, validaProduto, produtoController.createProductController);

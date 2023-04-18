@@ -446,6 +446,12 @@ Aula 29 - parametros da endpoints
 
 Aula 30 parei
 
+scritp do swagger 
+
+
+    /* "swagger-autogen":"nodemon ./swagger.js", */
+
+recorte fim de swagger json, antes do components
 
 
 
